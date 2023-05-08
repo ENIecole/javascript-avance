@@ -29,6 +29,14 @@ Ce cours s'articule autour de 5 modules :
 | Module 5 : Initiation à Angular | 2 journées
 |===
 
+== Powerpoints
+
+* http://54.36.181.210/javascript-avance/powerpoints/Module01.pptx[module 01]
+* http://54.36.181.210/javascript-avance/powerpoints/Module02.pptx[module 02]
+* http://54.36.181.210/javascript-avance/powerpoints/Module03.pptx[module 03]
+* http://54.36.181.210/javascript-avance/powerpoints/Module04.pptx[module 04]
+* http://54.36.181.210/javascript-avance/powerpoints/Module05.pptx[module 05]
+
 == Modules
 
 === Les bases de Javascript

@@ -31,7 +31,7 @@ export class TitreComponent {
 }
 ----
 
-WARNING: L'initialisation de l'attribut titre est possible directement lors de la déclaration cependant, cette façon de faire n'est pas recommandée par la documentation Angular puisqu'elle ne respecte pas le cycle de vie des composants.
+WARNING: L'initialisation de l'attribut titre est possible directement lors de la déclaration, cependant, cette façon de faire n'est pas recommandée par la documentation Angular puisqu'elle ne respecte pas le cycle de vie des composants.
 Ce point n'est pas traité dans cette initiation a Angular.
 
 * Modifier le fichier _titre.component.html_ pour utiliser l'interpolation
@@ -51,7 +51,7 @@ Ce point n'est pas traité dans cette initiation a Angular.
 </div>
 ```
 
-* Modifier le fichier _tous-les-super-heros.component.ts_ pour écrire la méthode appellée lors de l'évènement clic
+* Modifier le fichier _tous-les-super-heros.component.ts_ pour écrire la méthode appelée lors de l'évènement clic
 
 [source,typescript]
 ----
@@ -78,7 +78,7 @@ export class TousLesSuperHerosComponent {
 }
 ----
 
-* Modifier le fichier _tous-les-super-heros.compoennt.html_ pour que l'action sur le bouton puisse être visible par les étudiants
+* Modifier le fichier _tous-les-super-heros.component.html_ pour que l'action sur le bouton puisse être visible par les étudiants
 
 [source,html]
 ----

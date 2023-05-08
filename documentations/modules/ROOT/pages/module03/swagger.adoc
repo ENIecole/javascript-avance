@@ -23,9 +23,9 @@ image::module03/swagger_book.png[]
 
 image::module03/swagger_resultats.png[]
 
-== Schemas
+== Schémas
 
-* Se rendre dans la partie *Schemas* tout en bas de la page
-* Observer le schéma Book et faire le parralèle avec les classes (ou interfaces) Javascript
+* Se rendre dans la partie *Schémas* tout en bas de la page
+* Observer le schéma Book et faire le parallèle avec les classes (ou interfaces) Javascript
 
 image::module03/swagger_schemas.png[]

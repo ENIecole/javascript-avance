@@ -109,6 +109,6 @@ Aucune frustration. Ils font leur donner envie d'en connaître plus. A priori, i
 
 == Mise à jour des cours
 
-L'ensemble du cours (powerpoint, demonstrations et tps) est sur github à l'adresse : http://github.com/caliendojulien/eni-javascript-s2[]
+L'ensemble du cours (powerpoint, demonstrations et tps) est sur github à l'adresse : https://github.com/ENIecole/javascript-avance-demos-tps[]
 
 NOTE: Les mises à jour s'effectuent par *pull request*. Les erreurs sont signalées dans les *issues*.

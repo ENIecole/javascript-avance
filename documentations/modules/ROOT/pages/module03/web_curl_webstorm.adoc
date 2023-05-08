@@ -40,7 +40,7 @@ image::module03/curl_pikachu.png[]
 
 * À l'intérieur d'un projet WebStorm, créer un nouveau fichier : New=> File => HTTPRequest
 * Le nommer comme vous voulez. Par exemple : _api_
-* Écrire la même requête GET directement dans WebStorm et cliquez sur le bouton vert pour lancer la requête
+* Écrire la même requête GET directement dans WebStorm et cliquer sur le bouton vert pour lancer la requête
 
 [.text-center]
 image::module03/webstorm_pikachu.png[]

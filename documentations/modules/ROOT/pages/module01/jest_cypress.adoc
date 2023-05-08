@@ -6,7 +6,7 @@ L'objectif de cette démonstration est la mise en place de JEST et Cypress pour 
 
 == Mise en place
 
-* Créer un nouveau projet javascript vite (ou utiliser celui de la démonstration précédente)
+* Créer un nouveau projet javascript ViteJS (ou utiliser celui de la démonstration précédente)
 
 == JEST
 
@@ -23,7 +23,7 @@ TIP: Si WebStorm crie un petit peu avec de nombreux avertissements, installer @t
 
 === Mise en place d'un premier test unitaire
 
-* Créer un dossier tests a la racine du projet
+* Créer un dossier _tests_ à la racine du projet
 * Créer un fichier demonstration.test.js
 
 [source,javascript]
@@ -33,7 +33,7 @@ include::example$module01/jest_cypress/demonstration.test.js[indent=0]
 
 IMPORTANT: L'ensemble des asserts est disponible https://jestjs.io/fr/docs/expect[sur la documentation officielle de JEST]
 
-* Lancer les tests unitaires en cliquant sur la fleche verte
+* Lancer les tests unitaires en cliquant sur la flèche verte
 * Créer un fichier javascript contenant une méthode simple
 
 [source,javascript]

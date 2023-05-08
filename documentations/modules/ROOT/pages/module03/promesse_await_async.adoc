@@ -8,7 +8,7 @@ IMPORTANT: Lancer le script javascript en mode debug pour avoir le bon affichage
 
 == Chainage
 
-Un des grands intérêts des promesses est le fait de pouvoir la chainer.
+Un des grands intérêts des promesses est le fait de pouvoir la chaîner.
 
 [source,javascript]
 --
@@ -24,7 +24,7 @@ Et les deux sont "chaînées".
 
 == Erreurs
 
-N'importe quelle erreur dans la chaine de promesse peut être récupérée grâce à catch()
+N'importe quelle erreur dans la chaîne de promesse peut être récupérée grâce à catch()
 
 [source,javascript]
 ----
@@ -66,7 +66,7 @@ async permet de simplifier l'écriture d'une méthode asynchrone passant de ça 
 include::example$module03/asynchrone.js[tags=resolve,indent=0]
 --
 
-a ca :
+a ça :
 
 [source,javascript]
 --
@@ -77,7 +77,7 @@ Les deux méthodes retournent exactement le même résultat.
 
 === Await
 
-A l'inverse, await permet d'attendre le retour d'un appel asynchrone avant de passer a l'instruction suivante.
+À l'inverse, await permet d'attendre le retour d'un appel asynchrone avant de passer à l'instruction suivante.
 
 [source,javascript]
 --

@@ -10,7 +10,7 @@ Cette démonstration démarre ou la précédente s'arrête.
 
 == Création du service
 
-* À l'intérieur du projet Angular, lancer la création d'un servuce avec la commande :
+* À l'intérieur du projet Angular, lancer la création d'un service avec la commande :
 
 [source,console]
 ----
@@ -19,7 +19,7 @@ ng generate service services/api
 
 NOTE: Le nom du service peut paraître étrange pour l'instant, mais tout prendra sens avec la démonstration suivante
 
-* Déplacer le tableau de superhéros du composant _tous-les-super-heors.component.ts_ vers le service
+* Déplacer le tableau de super-héros du composant _tous-les-super-heros.component.ts_ vers le service
 
 [source,typescript]
 ----
@@ -122,4 +122,4 @@ export class UnSeulSuperHeroComponent {
 
 == Verification
 
-* Vérifier le bon fonctionnement de l'application malgré le changement sur le service effectué.
+* Vérifier le bon fonctionnement de l'application malgré le changement sur le service

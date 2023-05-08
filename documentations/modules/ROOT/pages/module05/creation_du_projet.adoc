@@ -1,4 +1,4 @@
-= Angular - création du projet de SuperHeros
+= Angular - création du projet de SuperHéros
 
 == Objectif
 
@@ -13,7 +13,7 @@ L'objectif de cette démonstration est la création d'un nouveau projet Angular.
 npm install -g @angular/cli
 ----
 
-TIP: NodeJS est normalement déjà installé sur les psotes clients
+TIP: NodeJS est normalement déjà installé sur les postes clients
 
 == Nouveau projet Angular
 
@@ -37,7 +37,7 @@ ng new super-ng
 
 == Serveur web de développement
 
-* Se déplacer dans le répertoire nouvellement créé et utiliser la commande permettant le lancement d'un serveur web de développement avec rechargement a chaud
+* Se déplacer dans le répertoire nouvellement créé et utiliser la commande permettant le lancement d'un serveur web de développement avec rechargement à chaud
 
 [source,console]
 ----

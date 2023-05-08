@@ -28,7 +28,7 @@ include::example$module03/index.html[tags=pikachu,indent=0]
 include::example$module03/index.html[tags=recherche_spotify,indent=0]
 ----
 
-* Une div qui contiendra le resultat de la recherche
+* Une div qui contiendra le résultat de la recherche
 
 [source,html]
 ----
@@ -37,9 +37,9 @@ include::example$module03/index.html[tags=resultat_spotify,indent=0]
 
 == Pokemons
 
-* Utiliser curl ou Webstorm pour effectuer une requete sur l'url https://pokeapi.co/api/v2/pokemon/pikachu[]
-* Analyser la strcture de la réponse
-* En conséquence, écrire une méthode fetch pour récupérer l'url de l'image du pokemon choisis et créer un nouvel élément dans le DOM
+* Utiliser curl ou Webstorm pour effectuer une requête sur l'url https://pokeapi.co/api/v2/pokemon/pikachu[]
+* Analyser la structure de la réponse
+* En conséquence, écrire une méthode fetch pour récupérer l'url de l'image du pokemon choisi et créer un nouvel élément dans le DOM
 
 [source,javascript]
 ----
@@ -51,7 +51,7 @@ image::module03/pikachu_spotify.png[]
 
 == Spotify
 
-=== Authorisations
+=== Autorisations
 
 Comme expliqué https://developer.spotify.com/documentation/web-api/tutorials/getting-started[dans la documentation], il est nécessaire d'avoir un token d'accès pour pouvoir utiliser l'api de spotify.
 
@@ -77,11 +77,11 @@ curl -X GET https://api.spotify.com/v1/browse/new-releases
 Du coup plusieurs solutions :
 
 * Se créer un compte spotify et suivre la documentation pour devenir propriétaire d'un token d'accès
-* Espérer que des développeurs moins bons que nous aient fait des erreurs en laissant trainer leur id, sur GitHub, en clair
+* Espérer que des développeurs moins bons que nous aient fait des erreurs en laissant traîner leur id, sur GitHub, en clair
 
 La deuxième méthode permet de montrer aux étudiants pourquoi l'apprentissage de Git, Gihub, .gitignore et les SECRETS est important
 
-Et puisqu'on sait quelle est le format de la requete :
+Et puisqu'on sait quel est le format de la requête :
 
 [source,console]
 ----
@@ -120,7 +120,7 @@ include::example$module03/script.js[tags=recherche_spotify,indent=0]
 ----
 
 Le nouvel élément dans le DOM porte l'id spotify retourné par l'API.
-Un évènement sur le clic entraine le déclenchement d'une autre requête API et la diffusion d'un son.
+Un évènement sur le clic entraîne le déclenchement d'une autre requête API et la diffusion d'un son.
 
 === Audio
 

@@ -6,7 +6,7 @@ L'objectif de cette démonstration est la création et l'utilisation d'objets Ja
 
 == Mise en place
 
-TIP: La mise en place effectuée dans la première démonstration peut être utilsée
+TIP: La mise en place effectuée dans la première démonstration peut être utilisée
 
 * Créer un fichier index.html dans un dossier _demonstrations/module02_
 * Créer un fichier script.js dans le même dossier

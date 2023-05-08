@@ -193,7 +193,7 @@ export class UnSeulSuperHeroComponent {
 
 == Modèles
 
-* Enfin, modifier les modèles pour les passer de classes à interface
+* Enfin, modifier les modèles pour les passer de classes à interfaces
 
 WARNING: Les déclarations d'interface doivent correspondre au format json de l'api
 

@@ -5,13 +5,13 @@
 
 == Objectifs
 
-L'objectif de cette démonstration est la création et l'utilisation d'objets Javascript simple en se rapprochant de ce qui se fait en Java avec les classes.
+L'objectif de cette démonstration est la création et l'utilisation d'objets Javascript simples en se rapprochant de ce qui se fait en Java avec les classes.
 
 Ici, on ne parle pas encore de classe ES6 puisqu'elles seront vues dans une des démonstrations suivantes.
 
 == Mise en place
 
-TIP: La mise en place effectuée dans la première démonstration peut être utilsée
+TIP: La mise en place effectuée dans la première démonstration peut être utilisée
 
 * Créer un fichier index.html dans un dossier _demonstrations/module02_
 * Créer un fichier script.js dans le même dossier

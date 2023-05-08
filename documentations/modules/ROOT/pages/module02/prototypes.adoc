@@ -6,7 +6,7 @@ L'objectif de cette démonstration est la création et l'utilisation d'objets Ja
 
 == Mise en place
 
-TIP: La mise en place effectuée dans la première démonstration peut être utilisé
+TIP: La mise en place effectuée dans la première démonstration peut être utilisée
 
 * Créer un fichier index.html dans un dossier _demonstrations/module02_
 * Créer un fichier script.js dans le même dossier
@@ -19,7 +19,7 @@ include::example$/module02/index.html[]
 
 == Création d'un objet
 
-=== Ajout du prototype a une function
+=== Ajout du prototype à une function
 
 On "exporte" les méthodes à l'intérieur d'un prototype.
 
@@ -32,7 +32,7 @@ include::example$/module02/script.js[tags=prototype1,indent=0]
 
 === Ajout de propriété à un prototype
 
-Ou bien en créant d'abord le prototype puis en y ajoutant des propriétés, au compte goute.
+Ou bien en créant d'abord le prototype puis en y ajoutant des propriétés, au compte goutte.
 
 [source,javascript]
 ----

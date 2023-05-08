@@ -139,7 +139,7 @@ npm install --save-dev tailwindcss postcss autoprefixer
 npx tailwindcss init
 ----
 
-Creer le fichier _postcss.config.js_
+Créer le fichier _postcss.config.js_
 
 [source,javascript]
 ----
@@ -205,7 +205,7 @@ Le fichier HTML commence par un titre H1.
 
 Sur le côté gauche, 3 inputs. Sur le côté droit, un cadre en couleur.
 
-L'objectif est de faire en sorte que les données inscritent dans les inputs se retrouvent dans le cadre de droite.
+L'objectif est de faire en sorte que les données inscrites dans les inputs se retrouvent dans le cadre de droite.
 
 image::module01/webpack/fiche_de_renseignement.png[]
 
@@ -226,7 +226,7 @@ include::example$module01/webpack/script.js[indent=0]
 ----
 
 NOTE: Utiliser uniquement les addEventListener() et pas les évènements en HTML.
-Pour qu'une fonction soit accessible avec des evenements de type onclick() alors elle doit etre dans le scope global de webpack.
+Pour qu'une fonction soit accessible avec des évènements de type onclick() alors elle doit être dans le scope global de webpack.
 window.salut = function () {console.log('salut');, par exemple. Puis <div onclick="salut()"></div>
 
 === CSS

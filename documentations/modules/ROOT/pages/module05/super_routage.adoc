@@ -71,7 +71,7 @@ export class Super {
 }
 ----
 
-* Ajouter un ID lors de la construction des instances de super héros dans le fichier _tous-les-super-heros.component.ts_
+* Ajouter un ID lors de la construction des instances de super-héros dans le fichier _tous-les-super-heros.component.ts_
 
 [source,typescript]
 ----
@@ -82,7 +82,7 @@ export class Super {
   }
 ----
 
-* Et modifier le fichier HTML afin de faire en sorte qu'un clic sur l'image d'un super héros nous emmène vers sa page personnalisée.
+* Et modifier le fichier HTML afin de faire en sorte qu'un clic sur l'image d'un super-héros nous emmène vers sa page personnalisée.
 
 [source,html]
 ----

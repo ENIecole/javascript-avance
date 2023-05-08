@@ -45,15 +45,15 @@ Le TP de fin de module est un jeu similaire au pendu. Un mot est tiré au sort e
 
 image::tps/module01/devinette_maquette.png[]
 
-La correction est à adapter en fonction du public. Avec des alternants, on va utiliser ViteJs alors qu'avec des formations continues, un simple fichier html,css et javascript restent suffisants.
+La correction est à adapter en fonction du public. Avec des alternants, on va utiliser ViteJs alors qu'avec des formations continues, un simple fichier html, css et javascript reste suffisant.
 
 === Javascript orienté objet
 
 On rentre dans le vif du sujet. L'objectif est de les emmener progressivement à utiliser ES6.
 
-Le but, ici, c'est de réussir, au fil des démos, à les faire glisser d'un objet Javascript banale et ridicule vers une classe ES6 en passant par de la factorisation et l'utilisation des prototypes.
+Le but, ici, c'est de réussir, au fil des démos, à les faire glisser d'un objet Javascript banal et ridicule vers une classe ES6 en passant par de la factorisation et l'utilisation des prototypes.
 
-NOTE: Les prototypes peuvent être abordés très très très rapidement. Ce n'est pas le but du module. La priorité c'est ES6.
+NOTE: Les prototypes peuvent être abordés très très très rapidement. Ce n'est pas le but du module. La priorité, c'est ES6.
 
 Une liste non exhaustive des nouvelles fonctionnalités de ES6 à nos jours est prévue. À adapter en fonction du temps passé sur ce module. Toutes les démonstrations ne sont pas forcément à faire.
 
@@ -62,9 +62,9 @@ En fin de module, une démonstration permet de mettre en lumière Babel.
 * Avec les alternants, c'est la continuité de Webpack vu pendant le module 01.
 * Pour les formations continues, c'est une découverte en ligne de commande.
 
-Le TP est une utilisation basique des classes ES6 pour réaliser un jeu de Quizz intéractif.
+Le TP est une utilisation basique des classes ES6 pour réaliser un jeu de Quizz interactif.
 
-// TODO Faire le TP enigma de difficulté beaucoup plus élévé pour les alternants
+// TODO Faire le TP enigma de difficulté beaucoup plus élevé pour les alternants
 
 === Javascript et les API
 
@@ -77,7 +77,7 @@ Ici, on leur expose une API qu'ils vont utiliser alors qu'ils vont la créer plu
 
 Ne pas hésiter à s' attarder longuement sur les promesses et les await/async. Ce sera du temps gagné sur l'initiation Angular.
 
-Le TP est intéressant et très agréable à réaliser. Nous allons suivre le trajet de l'ISS, en temps réèl, sur une carte LeafLet.
+Le TP est intéressant et très agréable à réaliser. Nous allons suivre le trajet de l'ISS, en temps réel, sur une carte LeafLet.
 
 image::tps/module03/iss_etape3.png[]
 
@@ -85,7 +85,7 @@ image::tps/module03/iss_etape3.png[]
 
 Le module 04 est strictement identique à ce qu'il était dans la précédente version du cours.
 
-Aucun changement. Pas même sur le TP qui est la réalisation de classes, en suivant scrupuleusement un diagramme de classes, avec ses héritages, ses interfaces, et ses attributs optionnels
+Aucun changement. Pas même sur le TP qui est la réalisation de classes, en suivant scrupuleusement un diagramme de classes, avec ses héritages, ses interfaces et ses attributs optionnels
 
 === Initiation à Angular
 
@@ -105,7 +105,7 @@ Le TP ressemble trait pour trait aux démonstrations à ceci près qu'il s'agit 
 
 L'objectif ici est de les guider au maximum. C'est une initiation. On leur montre quelque chose, ils refont exactement la même chose quelques minutes plus tard.
 
-Aucune frustration. Ils font leur donner envie d'en connaître plus. A priori, ils sont ravis de poursuivre avec Angular dans le module suivant.
+Aucune frustration. Il faut leur donner envie d'en connaître plus. A priori, ils seront ravis de poursuivre avec Angular dans le module suivant.
 
 == Mise à jour des cours
 

@@ -2,11 +2,11 @@
 
 == Objectifs
 
-L'objectif de cette démonstration est l'utilisation de babel pour "transformer" un code es6+ pour qu'il soit utilisable par de vieux navigateurs qui ne supporte pas cette version de ECMAscript
+L'objectif de cette démonstration est l'utilisation de babel pour "transformer" un code ES6+ pour qu'il soit utilisable par de vieux navigateurs qui ne supportent pas cette version de ECMAscript
 
 == Mise en place
 
-TIP: La mise en place effectuée dans la démonstration sur les classes ES6 peut être utilisé.
+TIP: La mise en place effectuée dans la démonstration sur les classes ES6 peut être utilisée.
 
 * Créer un fichier index.html dans un dossier _demonstrations/module02_
 * Créer un fichier script.js dans un dossier _javascript_
@@ -46,7 +46,11 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env
 
 == Babel
 
-core est le paquet principal de babel, cli est l'interface en ligne de commande et un preset est en ensemble de règles de "transformation" que l'on va pouvoir surcharger.
+_core_ est le paquet principal de babel,
+
+_cli_ est l'interface en ligne de commande
+
+un preset est un ensemble de règles de "transformation" que l'on va pouvoir surcharger.
 
 * Utiliser l'interface en ligne de commande pour tenter de convertir du code es6+
 
@@ -58,7 +62,7 @@ core est le paquet principal de babel, cli est l'interface en ligne de commande 
 * Faire le constat qu'un fichier javascript a bien été créé dans le dossier lib mais qu'il est strictement identique au fichier original.
 
 En effet, aucune règle n'a été définie donc il n'a rien transformé.
-On peut lui demander de ne s'occuper que des classes, ou bien que des méthodes fléchées mais la plupart du temps on va utiliser des presets ou des fichiers de configuration pour se faciliter le travail.
+On peut lui demander de ne s'occuper que des classes, ou bien que des méthodes fléchées, mais la plupart du temps, on va utiliser des presets ou des fichiers de configuration pour se faciliter le travail.
 
 === Presets
 

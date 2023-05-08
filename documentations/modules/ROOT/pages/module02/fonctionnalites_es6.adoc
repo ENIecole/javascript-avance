@@ -2,7 +2,7 @@
 
 == Objectifs
 
-L'objectif de cette démonstration est la présentation de différentes fonctionnalités ES6+ interessantes et utiles.
+L'objectif de cette démonstration est la présentation de différentes fonctionnalités ES6+ intéressantes et utiles.
 
 == Fonctionnalités
 

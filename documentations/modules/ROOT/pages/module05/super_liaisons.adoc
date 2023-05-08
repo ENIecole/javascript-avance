@@ -1,0 +1,114 @@
+= Angular - Liaisons composants-templates
+
+== Objectif
+
+L'objectif de cette démonstration est la présentation d'une liaison entre un composant et une template et l'inverse.
+
+== Mise en place
+
+Cette démonstration démarre ou la précédente s'arrête.
+
+== Composant _titre_
+
+* Modifier le fichier _titre.component.ts_ pour y ajouter un attribut
+
+[source,typescript]
+----
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-titre',
+  templateUrl: './titre.component.html',
+  styleUrls: ['./titre.component.scss']
+})
+export class TitreComponent {
+
+  public titre: string;
+
+  constructor() {
+    this.titre = 'Super NG';
+  }
+}
+----
+
+WARNING: L'initialisation de l'attribut titre est possible directement lors de la déclaration cependant, cette façon de faire n'est pas recommandée par la documentation Angular puisqu'elle ne respecte pas le cycle de vie des composants.
+Ce point n'est pas traité dans cette initiation a Angular.
+
+* Modifier le fichier _titre.component.html_ pour utiliser l'interpolation
+
+[source,html]
+----
+<h1>{{ titre }}</h1>
+----
+
+== Composant _tous-les-supers-heros
+
+* Modifier le fichier _tous-les-super-heros.component.html_ pour y ajouter un bouton et un évènement
+
+```html
+<div>
+  <button (click)="ajoutSupers()">Chargement</button>
+</div>
+```
+
+* Modifier le fichier _tous-les-super-heros.component.ts_ pour écrire la méthode appellée lors de l'évènement clic
+
+[source,typescript]
+----
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-tous-les-super-heros',
+  templateUrl: './tous-les-super-heros.component.html',
+  styleUrls: ['./tous-les-super-heros.component.scss']
+})
+export class TousLesSuperHerosComponent {
+
+  public supers: Array<any>;
+
+  constructor() {
+    this.supers = [];
+  }
+
+  public ajoutSupers() {
+    this.supers.push({nom: 'Wonder Woman'});
+    this.supers.push({nom: 'Hulk'});
+    this.supers.push({nom: 'Harley Quinn'});
+  }
+}
+----
+
+* Modifier le fichier _tous-les-super-heros.compoennt.html_ pour que l'action sur le bouton puisse être visible par les étudiants
+
+[source,html]
+----
+<div>
+  <button (click)="ajoutSupers()">Chargement</button>
+</div>
+<div>
+  {{ supers | json }}
+</div>
+----
+
+== CSS
+
+Modifier le fichier _tous-les-super-heros.component.scss_ pour rendre notre bouton plus joli
+
+[source,scss]
+----
+div {
+  @apply flex justify-center;
+}
+
+button {
+  @apply m-2 p-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-md flex justify-center;
+}
+----
+
+== Résultat
+
+* Cliquer sur le bouton et observer le comportement sur le tableau de supers.
+
+image::module05/super_liaisons/supers.png[]
+
+NOTE: Les directives seront vues dans la démonstration suivante pour un meilleur affichage.

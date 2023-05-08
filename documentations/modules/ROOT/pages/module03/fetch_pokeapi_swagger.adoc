@@ -1,0 +1,132 @@
+= fetch Pokeapi et Spotify
+
+== Objectifs
+
+L'objectif de cette démonstration est l'utilisation de fetch pour effectuer une requête sur une api.
+
+On utilisera l'api de https://developer.spotify.com/documentation/web-api[Spotify] et de https://pokeapi.co/[Pokemon].
+
+== Mise en place
+
+* Créer un fichier html
+* Créer un fichier script.js
+* Lier le html et le javascript
+
+Le fichier HTML contient 3 emplacements :
+
+* Une div pour afficher l'image d'un pokemon
+
+[source,html]
+----
+include::example$module03/index.html[tags=pikachu,indent=0]
+----
+
+* Un champ de saisie pour rechercher un artiste dans la librairie Spotify
+
+[source,html]
+----
+include::example$module03/index.html[tags=recherche_spotify,indent=0]
+----
+
+* Une div qui contiendra le resultat de la recherche
+
+[source,html]
+----
+include::example$module03/index.html[tags=resultat_spotify,indent=0]
+----
+
+== Pokemons
+
+* Utiliser curl ou Webstorm pour effectuer une requete sur l'url https://pokeapi.co/api/v2/pokemon/pikachu[]
+* Analyser la strcture de la réponse
+* En conséquence, écrire une méthode fetch pour récupérer l'url de l'image du pokemon choisis et créer un nouvel élément dans le DOM
+
+[source,javascript]
+----
+include::example$module03/script.js[tags=pikachu,indent=0]
+----
+
+[.text-center]
+image::module03/pikachu_spotify.png[]
+
+== Spotify
+
+=== Authorisations
+
+Comme expliqué https://developer.spotify.com/documentation/web-api/tutorials/getting-started[dans la documentation], il est nécessaire d'avoir un token d'accès pour pouvoir utiliser l'api de spotify.
+
+En effet, si on tente de récupérer https://developer.spotify.com/documentation/web-api/reference/get-new-releases[les nouveautés spotify du moment], on se heurte a une erreur.
+
+[source,console]
+----
+curl -X GET https://api.spotify.com/v1/browse/new-releases
+----
+
+😥
+
+[source,json]
+----
+{
+  "error": {
+    "status": 401,
+    "message": "No token provided"
+  }
+}
+----
+
+Du coup plusieurs solutions :
+
+* Se créer un compte spotify et suivre la documentation pour devenir propriétaire d'un token d'accès
+* Espérer que des développeurs moins bons que nous aient fait des erreurs en laissant trainer leur id, sur GitHub, en clair
+
+La deuxième méthode permet de montrer aux étudiants pourquoi l'apprentissage de Git, Gihub, .gitignore et les SECRETS est important
+
+Et puisqu'on sait quelle est le format de la requete :
+
+[source,console]
+----
+curl -X POST "https://accounts.spotify.com/api/token" \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     -d "grant_type=client_credentials&client_id=your-client-id&client_secret=your-client-secret"
+----
+
+Une recherche sur GitHub porte toujours ses fruits :
+
+image::module03/github.png[]
+
+On va donc pouvoir utiliser le client_id de l'utilisateur NickDay04 qui a clairement manqué de vigilance sur ce coup-là.
+
+IMPORTANT: C'est le bon moment pour faire un rappel sur le côté *public* des dépots GitHub et des informations qui s'y trouvent.
+
+[source,javascript]
+----
+include::example$module03/script.js[tags=token_spotify,indent=0]
+----
+
+Le fetch est très différent du premier puisque c'est un POST.
+La configuration des headers et le contenu du body est imposé par https://developer.spotify.com/documentation/web-api/tutorials/client-credentials-flow[la documentation de spotify].
+
+* Stocker le token dans le "local storage" pour une utilisation future
+
+En effet, HTTP est stateless donc il va falloir renvoyer le token à chaque requête suivante.
+
+=== Recherche d'un artiste
+
+* En s'appuyant, encore une fois, sur https://developer.spotify.com/documentation/web-api/reference/search[la documentation], effectuer une requête HTTP pour rechercher l'artiste entré par l'utilisateur dans le champ de saisie
+
+[source,javascript]
+----
+include::example$module03/script.js[tags=recherche_spotify,indent=0]
+----
+
+Le nouvel élément dans le DOM porte l'id spotify retourné par l'API.
+Un évènement sur le clic entraine le déclenchement d'une autre requête API et la diffusion d'un son.
+
+=== Audio
+
+[source,javascript]
+----
+include::example$module03/script.js[tags=son_spotify,indent=0]
+----
+
+* En toute simplicité, créer un nouvel élément Audio() grâce à l'id récupéré précédemment et lancer l'écoute.

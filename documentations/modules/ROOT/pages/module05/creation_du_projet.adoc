@@ -1,0 +1,49 @@
+= Angular - création du projet de SuperHeros
+
+== Objectif
+
+L'objectif de cette démonstration est la création d'un nouveau projet Angular.
+
+== Angular CLI
+
+* Installer Angular CLI, globalement, sur sa machine
+
+[source,console]
+----
+npm install -g @angular/cli
+----
+
+TIP: NodeJS est normalement déjà installé sur les psotes clients
+
+== Nouveau projet Angular
+
+* Ouvrir une nouvelle invite de commande et se déplacer dans un répertoire de travail
+
+[source,console]
+----
+cd Documents
+----
+
+TIP: Si les étudiants veulent créer leur projet sur D:, il va falloir changer la ligne de commande, bien entendu
+
+* Taper la ligne de commande permettant la génération d'un nouveau projet Angular
+
+[source,console]
+----
+ng new super-ng
+----
+
+* Répondre _oui_ au routage et sélectionner _scss_ comme format de style
+
+== Serveur web de développement
+
+* Se déplacer dans le répertoire nouvellement créé et utiliser la commande permettant le lancement d'un serveur web de développement avec rechargement a chaud
+
+[source,console]
+----
+cd super-ng
+ng serve
+----
+
+* Constater la page d'accueil du site qui correspond au composant app-component.html
+

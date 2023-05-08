@@ -1,0 +1,138 @@
+= Angular - Super routage
+
+== Objectif
+
+L'objectif de cette démonstration est la présentation du routage dans une application Angular simple.
+
+== Mise en place
+
+Cette démonstration démarre ou la précédente s'arrête.
+
+== Composant un-seul-super-heros
+
+* Créer un nouveau composant qui sera responsable de l'affichage d'un et un seul super hero.
+
+[source,console]
+----
+ng generate component composants/unSeulSuperHero
+----
+
+== Routes
+
+* Ce composant sera accessible à l'adresse http://localhot:4200/un-seul-super-hero/2 par exemple. Ou 2 est l'id du héro.
+* Modifier les routes en conséquences dans le fichier _app-routing.module.ts_
+
+[source,typescript]
+----
+const routes: Routes = [
+    { path: '', component: TousLesSuperHerosComponent },
+    { path: 'tous-les-super-heros', component: TousLesSuperHerosComponent },
+    { path: 'un-seul-super-hero/:id', component: UnSeulSuperHeroComponent }
+];
+----
+
+* Modifier le fichier _app.component.html_ pour utiliser la balise _router-outlet_
+
+[source,html]
+----
+<app-titre></app-titre>
+<router-outlet></router-outlet>
+----
+
+== Modèle et routerLink
+
+* Modifier la classe super.ts pour y faire figurer un id :
+
+[source,typescript]
+----
+export class Super {
+
+  private readonly _id: number;
+  private readonly _nom: string;
+  private readonly _image: string;
+
+  constructor(id:number, nom: string, image: string) {
+    this._id = id;
+    this._nom = nom;
+    this._image = image;
+  }
+
+  get id(): number {
+    return this._id;
+  }
+
+  get nom(): string {
+    return this._nom;
+  }
+
+  get image(): string {
+    return this._image;
+  }
+}
+----
+
+* Ajouter un ID lors de la construction des instances de super héros dans le fichier _tous-les-super-heros.component.ts_
+
+[source,typescript]
+----
+  public ajoutSupers() {
+    this.supers.push(new Super(1, 'Wonder Woman', 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/720-wonder-woman.jpg'));
+    this.supers.push(new Super(2, 'Hulk', 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/332-hulk.jpg'));
+    this.supers.push(new Super(3, 'Harley Quinn', 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/309-harley-quinn.jpg'));
+  }
+----
+
+* Et modifier le fichier HTML afin de faire en sorte qu'un clic sur l'image d'un super héros nous emmène vers sa page personnalisée.
+
+[source,html]
+----
+<div>
+  <button (click)="ajoutSupers()">Chargement</button>
+</div>
+
+<div class="supers">
+  <a *ngFor="let chaque_super of supers" [routerLink]="['/un-seul-super-hero', chaque_super.id]">
+    <img [src]="chaque_super.image">
+  </a>
+</div>
+----
+
+* Vérifier que le clic sur l'image affiche le composant ad hoc.
+
+== ActivatedRoute
+
+* Effectuer une injection de dépendance afin de pouvoir récupérer l'id de l'url
+
+[source,typescript]
+----
+import {Component, Inject} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+
+@Component({
+  selector: 'app-un-seul-super-hero',
+  templateUrl: './un-seul-super-hero.component.html',
+  styleUrls: ['./un-seul-super-hero.component.scss']
+})
+export class UnSeulSuperHeroComponent {
+
+  public id!: string | null;
+
+  constructor(
+    @Inject(ActivatedRoute) private route: ActivatedRoute
+  ) {
+    this.id = this.route.snapshot.paramMap.get('id');
+  }
+
+}
+----
+
+== Style
+
+* Modifier le fichier _un-seul-super-hero.html afin de prouver aux étudiants que le routage fonctionne correctement et que l'on est capable de récupérer l'id de l'url
+
+[source,html]
+----
+<div class="grid grid-cols-2 items-center justify-items-center p-4">
+<p>Dans très peu de temps, le super héro avec l'id {{ id }} sera visible ici.</p>
+</div>
+----

@@ -1,0 +1,63 @@
+= Classes Typescript
+
+== Objectif
+
+L'objectif de cette démonstration est la déclaration et l'utilisation des classes en Typescript.
+
+== Classe simple
+
+* Écrire, dans un fichier typescript, le code suivant :
+
+[source,typescript]
+----
+include::example$module04/classes/classes.ts[indent=0,tags=sport]
+----
+
+TIP: Le mot clé _export_ permet l'utilisation de cette classe dans une autre classe.
+
+* Créer une instance de la classe Sport
+
+[source,typescript]
+----
+include::example$module04/classes/classes.ts[indent=0,tags=squash]
+----
+
+== Héritage
+
+[source,typescript]
+----
+include::example$module04/classes/classes.ts[indent=0,tags=heritage]
+----
+
+Et son utilisation :
+
+[source,typescript]
+----
+include::example$module04/classes/classes.ts[indent=0,tags=sport_de_competition]
+----
+
+== Interface
+
+[source,typescript]
+----
+include::example$module04/classes/classes.ts[indent=0,tags=interface]
+----
+
+Et son utilisation :
+
+[source,typescript]
+----
+include::example$module04/classes/classes.ts[indent=0,tags=implements]
+----
+
+=== Interface de méthode
+
+[source,typescript]
+----
+include::example$module04/classes/classes.ts[indent=0,tags=interface_de_methode]
+----
+
+== Résultat
+
+* Visualiser le ou les fichiers javascript générés par l'IDE
+* Exécuter le ou les fichiers pour observer le comportement

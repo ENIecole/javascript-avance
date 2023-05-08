@@ -1,0 +1,40 @@
+= ISS
+
+La station spatiale internationale
+
+image::tps/module03/iss.svg[]
+
+L'ISS est une station spatiale placée en orbite terrestre basse occupée en permanence par un équipage internationale.
+
+== Objectif
+
+L'objectif de ce TP est de pouvoir suivre, en temps réel, la position de l'ISS au-dessus de la terre.
+
+== Réalisation
+
+=== Latitude et longitude
+
+L’ISS fournit, au travers d’une api, sa latitude et sa longitude.
+Vous trouverez, plus d’explication http://open-notify.org/Open-Notify-API/ISS-Location-Now[sur cette url].
+
+Plus précisément, c’est l’url http://api.open-notify.org/iss-now.json[] que vous allez utiliser.
+Faites une requête API et affichez la latitude et la longitude actuelle de la station.
+
+image::tps/module03/iss_etape1.png[]
+
+=== Leaflet
+
+En utilisant Leaflet et son tutorial https://leafletjs.com/examples/quick-start[quick-start].
+Vous utiliserez la latitude et la longitude de l'ISS pour centrer la carte.
+
+image::tps/module03/iss_etape2.png[]
+
+=== En mouvement
+
+En regardant plus attentivement la documentation de Leaflet et en ajoutant du css, dessinez une station spatiale et faites la bouger.
+
+image::tps/module03/iss_etape3.png[]
+
+== Solution
+
+Une solution est proposée pour ce TP sous la forme de fichiers HTML, CSS et Javascript disponibles dans les ressources à télécharger.

@@ -1,0 +1,21 @@
+= Vente aux enchères
+
+== Objectif
+
+L'objectif de ce TP est la mise en place de classes Typescript à partir d'un diagramme de classe.
+
+== Réalisation
+
+Écrivez les classes et interfaces du diagramme de classes suivant permettant par la suite de mettre en place une application de vente aux enchères.
+
+== Diagramme de classe
+
+image::tps/module04/diag_de_classes.png[]
+
+* Vous écrirez un programme en console pour vous assurer du bon fonctionnement des différentes classes.
+
+TIP: Creer une nouvelle sculpture, la mettre en vente, et faire une enchère inférieure puis supérieur au prix actuel par exemple.
+
+== Solution
+
+Une solution est proposée pour ce TP sous la forme de fichiers HTML, CSS et Javascript disponibles dans les ressources à télécharger.

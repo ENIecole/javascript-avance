@@ -1,0 +1,121 @@
+= Angular - Super directives
+
+== Objectif
+
+L'objectif de cette démonstration est la présentation des directives *ngFor et *ngIf.
+
+== Mise en place
+
+Cette démonstration démarre ou la précédente s'arrête.
+
+== Problèmes
+
+* Faire constater aux étudiants que l'affichage du tableau vide n'est pas utile
+* Faire constater aux étudiants que l'interpolation d'un tableau sans le filtre _json_ n'affiche rien
+
+== Template
+
+* Modifier le fichier _tous-les-super-heros.component.html_ pour y effectuer un *ngFor
+
+[source,html]
+----
+<div>
+  <button (click)="ajoutSupers()">Chargement</button>
+</div>
+
+<div class="supers">
+  <a *ngFor="let chaque_super of supers">
+    <img [src]="chaque_super.images.sm">
+  </a>
+</div>
+----
+
+== Typescript
+
+* Modifier le fichier _tous-les-super-heros.component.ts_ pour ajouter une image aux super héros
+
+[source,typescript]
+----
+  public ajoutSupers() {
+    this.supers.push({
+      nom: 'Wonder Woman',
+      images: {sm: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/720-wonder-woman.jpg'}
+    });
+    this.supers.push({
+      nom: 'Hulk',
+      images: {sm: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/332-hulk.jpg'}
+    });
+    this.supers.push({
+      nom: 'Harley Quinn',
+      images: {sm: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/309-harley-quinn.jpg'}
+    });
+  }
+----
+
+== CSS
+
+* Modifier le fichier de style _tous-les-super-heros.scss_
+
+[source,scss]
+----
+div {
+  @apply flex justify-center;
+}
+
+button {
+  @apply m-2 p-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-md flex justify-center;
+}
+
+.supers {
+  @apply flex flex-wrap gap-1 justify-center;
+}
+----
+
+== Résultat
+
+image::module05/super_directives/maquette.png[]
+
+== Interface
+
+* Pour peaufiner un peu, créer une interface _Super_ dans un dossier _src/app/modeles/_
+
+[source,typescript]
+----
+export class Super {
+  private readonly _nom: string;
+  private readonly _image: string;
+
+  constructor(nom: string, image: string) {
+    this._nom = nom;
+    this._image = image;
+  }
+
+  get nom(): string {
+    return this._nom;
+  }
+
+  get image(): string {
+    return this._image;
+  }
+}
+----
+
+* Modifier le fichier TypeScript _tous-les-super-heros.component.ts_
+
+[source,typescript]
+----
+public supers: Array<Super>;
+----
+
+* Modifier le fichier html _tous-les-super-heros.component.html_
+
+[source,html]
+----
+<div class="supers">
+  <a *ngFor="let chaque_super of supers">
+    <img [src]="chaque_super.image">
+  </a>
+</div>
+----
+
+* Vérifier que le résultat est toujours le même en utilisant des objets *Super* plutôt qu'*any*

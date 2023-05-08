@@ -1,0 +1,90 @@
+= JEST
+
+== Objectifs
+
+L'objectif de cette démonstration est la mise en place de JEST et Cypress pour effectuer des tests unitaires et e2e.
+
+== Mise en place
+
+* Créer un nouveau projet javascript vite (ou utiliser celui de la démonstration précédente)
+
+== JEST
+
+=== Installation
+
+* Installer le paquet NPM de Jest
+
+[source,console]
+----
+npm install --save-dev jest
+----
+
+TIP: Si WebStorm crie un petit peu avec de nombreux avertissements, installer @types/jest avec npm.
+
+=== Mise en place d'un premier test unitaire
+
+* Créer un dossier tests a la racine du projet
+* Créer un fichier demonstration.test.js
+
+[source,javascript]
+----
+include::example$module01/jest_cypress/demonstration.test.js[indent=0]
+----
+
+IMPORTANT: L'ensemble des asserts est disponible https://jestjs.io/fr/docs/expect[sur la documentation officielle de JEST]
+
+* Lancer les tests unitaires en cliquant sur la fleche verte
+* Créer un fichier javascript contenant une méthode simple
+
+[source,javascript]
+----
+include::example$module01/jest_cypress/calculatrice.js[indent=0]
+----
+
+* Ajouter le test de cette calculatrice dans le fichier demonstration.test.js
+
+[source,javascript]
+----
+it('devrait faire l\'addition', () => {
+        expect(addition(2,2)).toStrictEqual(4);
+    });
+----
+
+* Relancer les tests unitaires
+* Relancer les tests unitaires avec la couverture de code en cliquant sur le bouton de l'IDE en haut à droite
+
+image::module01/jest_cypress/coverage.png[]
+
+* Encourager les étudiants à réaliser les tests unitaires sur tous les TPs.
+
+== Cypress
+
+* Installer cypress grâce a NPM
+
+[source,console]
+----
+npm install --save-dev cypress
+----
+
+* Lancer cypress
+
+[source,console]
+----
+npx cypress open
+----
+
+* Sélectionner "E2E Testing"
+
+image::module01/jest_cypress/e2etesting.png[]
+
+* Puis _Continue_
+
+* Sélectionner un navigateur et cliquer sur _Start E2E Testing_
+
+image::module01/jest_cypress/firefox.png[]
+
+* Sélectionner une spec et constater l'exécution pas à pas de Cypress.
+
+* Ouvrir le fichier todo.cy.js dans le repertoire cypress à la racine du projet
+* Constater l'écriture basique des instructions cypress
+* Encourager les étudiants à réaliser les tests e2e sur tous les TPs.

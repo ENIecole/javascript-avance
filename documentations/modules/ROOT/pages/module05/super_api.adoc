@@ -1,0 +1,238 @@
+= Angular - Super API
+
+== Objectif
+
+L'objectif de cette démonstration est l'utilisation d'une API grâce à HTTPClient.
+Très peu de changement dans les composants. La majorité du travail va se faire dans le service.
+
+== Mise en place
+
+Cette démonstration démarre ou la précédente s'arrête.
+
+== Ajout du module HttpClientModule
+
+* Dans le fichier _app.module.ts_
+
+[source,typescript]
+----
+imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
+  ],
+----
+
+== Services
+
+* Ajouter une injection de dépendance de HttpClient dans le _api.service.ts_ et utiliser l'api _akabab_ https://akabab.github.io/superhero-api/api[]
+
+```typescript
+import { HttpClient } from '@angular/common/http';
+import { Inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+
+  private _base_url: string = 'https://akabab.github.io/superhero-api/api';
+
+  constructor(
+    @Inject(HttpClient) private _http: HttpClient
+  ) {
+  }
+
+  public recupererLesSuperHeros(): Observable<Super[]> {
+    return this._http.get<Super[]>(this._base_url + '/all.json');
+  }
+
+  public recupereUnSeulSuperHero(id: number): Observable<Super> {
+    return this._http.get<Super>(this._base_url + '/id/' + id + '.json');
+  }
+}
+```
+
+WARNING: Noter l'utilisation des Observables en lieu et place des Super.
+
+== app.component.html
+
+[source,html]
+----
+<h1 class="text-white text-4xl flex justify-center p-4 bg-gradient-to-b from-blue-800 to-blue-100">
+  <a [routerLink]="['/tous-les-super-heros']">
+    SuperHeroes
+  </a>
+</h1>
+<div class="bg-gradient-to-t from-blue-800 to-blue-100 h-full">
+  <router-outlet></router-outlet>
+</div>
+----
+
+== HTML
+
+* Utiliser les observables et le filtre async dans les fichiers HTML
+
+=== Tous-les-super-heros
+
+[source,html]
+----
+<div *ngIf="!supers$" class="flex justify-center justify-items-center">
+  <svg class="animate-spin text-white w-10 h-10" fill="none" viewBox="0 0 24 24">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+    <path class="opacity-75" fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+    </path>
+  </svg>
+</div>
+
+<div class="flex flex-wrap gap-1 justify-center" *ngIf="supers$ | async as tous_les_super_heros">
+  <a [routerLink]="['/un-seul-super-hero', chaque_superheros.id]" class="basic-1/10"
+     *ngFor="let chaque_superheros of tous_les_super_heros">
+    <img [src]="chaque_superheros.images.sm">
+  </a>
+</div>
+----
+
+image::module05/super_api/tous-les-super-heros.png[]
+
+=== Un-seul-super-hero
+
+[source,html]
+----
+<div class="grid grid-cols-2 items-center justify-items-center p-4"
+     *ngIf="un_super$ | async as un_seul_super_hero">
+  <img class="rounded-lg" [src]="un_seul_super_hero.images.md">
+  <div class="text-white text-xl">
+    <div class="font-bold  text-center
+                    border border-white p-2 mb-2">
+      {{ un_seul_super_hero.name }}
+    </div>
+    <div class="text-center m-4">
+      {{ un_seul_super_hero.biography.fullName }}
+    </div>
+    <div>
+      <p class="m-2">
+        Statistiques
+      </p>
+      <ul class="list-disc list-inside">
+        <li class="ml-6">Intelligence : {{ un_seul_super_hero.powerstats.intelligence }}</li>
+        <li class="ml-6">Force : {{ un_seul_super_hero.powerstats.strength }}</li>
+        <li class="ml-6">Vitesse : {{ un_seul_super_hero.powerstats.speed }}</li>
+        <li class="ml-6">Puissance : {{ un_seul_super_hero.powerstats.power }}</li>
+        <li class="ml-6">Combat : {{ un_seul_super_hero.powerstats.combat }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+----
+
+image::module05/super_api/un-seul-super-hero.png[]
+
+== Typescript
+
+* Utiliser les observables dans les fichiers typescript des deux composants
+
+=== Tous-les-super-heros
+
+[source,typescript]
+----
+import {Component, Inject} from '@angular/core';
+import {Super} from "../../modeles/Super";
+import {ApiService} from "../../services/api.service";
+import {Observable} from "rxjs";
+
+@Component({
+  selector: 'app-tous-les-super-heros',
+  templateUrl: './tous-les-super-heros.component.html',
+  styleUrls: ['./tous-les-super-heros.component.scss']
+})
+export class TousLesSuperHerosComponent {
+
+  public supers$: Observable<Super[]> | undefined;
+
+  constructor(
+    @Inject(ApiService) private api: ApiService
+  ) {
+    this.supers$ = this.api.recupererLesSuperHeros();
+  }
+}
+----
+
+=== Un-seul-super-hero
+
+[source,typescript]
+----
+import {Component, Inject} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {ApiService} from "../../services/api.service";
+import {Super} from "../../modeles/Super";
+import {Observable} from "rxjs";
+
+@Component({
+  selector: 'app-un-seul-super-hero',
+  templateUrl: './un-seul-super-hero.component.html',
+  styleUrls: ['./un-seul-super-hero.component.scss']
+})
+export class UnSeulSuperHeroComponent {
+
+  public id!: string | null;
+  public un_super$: Observable<Super> | undefined;
+
+  constructor(
+    @Inject(ActivatedRoute) private route: ActivatedRoute,
+    @Inject(ApiService) private api: ApiService
+  ) {
+    this.id = this.route.snapshot.paramMap.get('id');
+    if (this.id) {
+      this.un_super$ = this.api.recupereUnSeulSuperHero(+this.id);
+    }
+  }
+}
+----
+
+== Modèles
+
+* Enfin, modifier les modèles pour les passer de classes à interface
+
+WARNING: Les déclarations d'interface doivent correspondre au format json de l'api
+
+=== Super.ts
+
+[source,typescript]
+----
+import {Images} from "./Images";
+import {Powerstats} from "./Powerstats";
+import {Biography} from "./Biography";
+
+export interface Super {
+  id: number;
+  name: string;
+  images: Images;
+  powerstats: Powerstats;
+  biography: Biography;
+}
+----
+
+=== Biography.ts
+
+[source,typescript]
+----
+export interface Biography {
+  fullName: string;
+}
+----
+
+=== Powerstats.ts
+
+[source,typescript]
+----
+export interface Powerstats {
+  intelligence: number;
+  strength: number;
+  speed: number;
+  durability: number;
+  power: number;
+  combat: number;
+}
+----

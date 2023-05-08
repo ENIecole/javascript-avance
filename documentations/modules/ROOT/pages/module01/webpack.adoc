@@ -1,0 +1,237 @@
+= Webpack
+
+== Objectifs
+
+L'objectif de cette démonstration est la mise en place d'un projet HTML/Javascript simple en utilisant npm et Webpack.
+
+Webpack est la petite nouveauté par rapport à ce qu'ils connaissent déjà.
+Pour illustrer l'intérêt de celui-ci, on va installer le framework scss https://tailwindcss.com/[tailwind].
+
+== Mise en place
+
+* Ouvrir Webstorm
+* Vérifier que nodejs est installé
+
+[source,console]
+----
+node -v
+----
+
+* À l'intérieur d'un nouveau dossier, initialiser un projet javascript
+
+[source,console]
+----
+npm init -y
+----
+
+Cette commande va créer un fichier package.json
+
+* Créer un nouveau document javascript : clic droit =>New =>JavaScript file
+* Ainsi qu'un nouveau document html : clic droit =>New =>HTML file
+
+NOTE: le lien entre le javascript et le html sera fait par Webpack
+
+== Webpack
+
+=== Installation
+
+Grâce à NPM, tout se fait en ligne de commande.
+
+À l'intérieur du dossier de notre projet de démonstration :
+
+[source,console]
+----
+npm install webpack webpack-cli --save-dev
+----
+
+NOTE: --save-dev permet de dire à webpack de ne pas incorporer ces deux paquets à notre projet final.
+
+Le fichier _package.json_ a dû s'enrichir de quelques lignes dans les dépendances :
+
+[source]
+----
+  "devDependencies": {
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  }
+----
+
+Et un dossier _node_modules_ est maintenant présent dans l'architecture de notre projet.
+
+=== Architecture
+
+Pour respecter les bonnes pratiques de webpack, créer un fichier index.js (le point d'entrée défini dans le fichier _package.json_), un dossier _dist_ vide et un dossier _src_ qui contient nos sources (index.html et script.js).
+
+À ce stade, l'architecture du projet est la suivante :
+
+image::module01/webpack/architecture.png[]
+
+=== HtmlWebpackPlugin
+
+Installer un plugin pour simplifier la création d'un HTML minifié dans le dossier _dist_.
+
+[source,console]
+----
+npm install --save-dev html-webpack-plugin
+----
+
+Faire l'import de notre fichier script.js à l'intérieur du point d'entrés _index.js_.
+
+[source,javascript]
+----
+import './script.js';
+----
+
+=== Configuration
+
+Créer un fichier _webpack.config.js_ qui contiendra toute la configuration de webpack.
+
+IMPORTANT: Depuis Webpack 5, la création d'un fichier _webpack.config.js_ est fortement recommandé
+
+[source,javascript]
+----
+const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+    entry: './src/index.js',
+    plugins: [
+        new HtmlWebpackPlugin(
+            {
+                template: './src/index.html'
+            }
+        )
+    ],
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true
+    }
+};
+----
+
+Ce fichier précise :
+
+* qu'index.js est le point d'entrée,
+* qu'on va utiliser le plugin HtmlWebpackPlugin
+* que webpack devra générer :
+    - un fichier html à partir du fichier _index.html_ du dossier _src_
+    - un fichier javascript à partir du fichier _index.js_ du dossier _src_
+    - lier le javascript et le html qui ont été générés dans le dossier _dist_
+
+[source,console]
+----
+npx webpack          // Permet la génération des fichiers dans le dossier dist
+npw webpack --watch  // Utile en developpement (Hot reloading)
+----
+
+== Tailwind
+
+NOTE: Cette étape est facultative.
+Elle permet de montrer comment installer un vrai framework scss dans un projet webpack.
+Bien entendu, n'importe quel framework css peut être utilisé avec un CDN.
+
+Installer Tailwind en tant que plugin webpack post-css
+
+[source,console]
+----
+npm install --save-dev tailwindcss postcss autoprefixer
+npx tailwindcss init
+----
+
+Creer le fichier _postcss.config.js_
+
+[source,javascript]
+----
+module.exports = {
+    plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+    }
+}
+----
+
+Modifier le fichier _tailwind.config.js_ pour lui indiquer où se trouve les fichiers html et javascript
+
+[source,javascript]
+----
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+}
+----
+
+Créer un fichier css _style.css_ dans notre projet en y ajoutant les directives de tailwind :
+
+[source,css]
+----
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+----
+
+Ajouter le fichier _main.css_ aux imports du point d'entrée de webpack _index.js_.
+
+Webpack a besoin de "loaders" pour pouvoir charger Tailwind.
+
+On les installe :
+
+[source,console]
+----
+npm install style-loader css-loader postcss-loader
+----
+
+Et on ajoute les "loaders" en tant que module dans le fichier _webpack.config.js_
+
+[source]
+----
+module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader']
+      }
+    ]
+  }
+----
+
+== Réalisation
+
+Le fichier HTML commence par un titre H1.
+
+Sur le côté gauche, 3 inputs. Sur le côté droit, un cadre en couleur.
+
+L'objectif est de faire en sorte que les données inscritent dans les inputs se retrouvent dans le cadre de droite.
+
+image::module01/webpack/fiche_de_renseignement.png[]
+
+=== HTML
+
+[source,html]
+----
+include::example$module01/webpack/index.html[indent=0]
+----
+
+IMPORTANT: Font awesome est intégré grâce à un CDN. Le "loader" de babel ne sera vu qu'au module 02.
+
+=== Javascript
+
+[source,javascript]
+----
+include::example$module01/webpack/script.js[indent=0]
+----
+
+NOTE: Utiliser uniquement les addEventListener() et pas les évènements en HTML.
+Pour qu'une fonction soit accessible avec des evenements de type onclick() alors elle doit etre dans le scope global de webpack.
+window.salut = function () {console.log('salut');, par exemple. Puis <div onclick="salut()"></div>
+
+=== CSS
+
+[source,scss]
+----
+include::example$module01/webpack/main.css[indent=0]
+----

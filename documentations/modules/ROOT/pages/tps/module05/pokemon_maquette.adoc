@@ -1,0 +1,30 @@
+= Pokemon - Maquette
+
+
+
+== Objectif
+
+L'objectif de ce TP est la mise en place du tp fil rouge en créant des composants afin de correspondre à une maquette donnée.
+
+== Description
+
+Créez une nouvelle application Angular nommée PokemonManager.
+
+Cette application est une application de gestion de Pokémon, une franchise de Nintendo dont les jeux se sont vendus à plus de 30 millions d’exemplaires.
+C’est aussi un jeu de cartes et un dessin animé.
+
+Elle sera le fil rouge de cette semaine.
+
+D’abord élémentaire, elle permettra l’assimilation de l’ensemble des concepts que doit maîtriser un développeur Angular junior.
+
+À la fin du module Angular, elle sera une véritable application fonctionnelle.
+
+== Réalisation
+
+* Créez  deux  composants  nommés _generations_ et _pokemons_ dans  un  répertoire «composants» dans le répertoire «src» de l’application.
+* Utilisez son sélecteur pour le placer judicieusement dans le fichier _app-component.html_.
+* Affichez le composant generations en page d’accueil.
+
+== Pour aller plus loin
+
+* Créez un dépôt sur GitHub qui accueillera le code de votre application.

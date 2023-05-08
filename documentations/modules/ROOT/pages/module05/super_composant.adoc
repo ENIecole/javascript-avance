@@ -1,0 +1,94 @@
+= Angular - Super composants
+
+== Objectif
+
+L'objectif de cette démonstration est la création d'un composant pour la page d'accueil et un composant pour l'affichage de tous les super héros et héroines.
+
+== Mise en place
+
+Cette démonstration démarre ou la précédente s'arrête.
+
+== Nettoyage
+
+* Supprimer entièrement le contenu du fichier _app.component.html_
+
+== Nos premiers composants
+
+* Créer un composant _titre_ et un composant _tous-les-super-heros_ avec les commandes
+
+[source,console]
+----
+ng generate component composants/titre
+ng generate component composants/tous-les-super-heros
+----
+
+== Utilisation des composants
+
+* Sélectionner le fichier _app.component.html_ et y insérer les selecteurs des composants créés précédemment
+
+[source,html]
+----
+<!-- app.component.html -->
+<app-titre></app-titre>
+<app-tous-les-super-heros></app-tous-les-super-heros>
+----
+
+== Composants
+
+* Expliquer chaque ligne des fichiers Typescript des composants
+
+== CSS
+
+* Installer tailwindcss à l'intérieur du projet angular
+
+[source,console]
+----
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+----
+
+* Modifier le fichier _tailwind.config.js_
+
+[source,javascript]
+----
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts,scss}"
+  ],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+}
+----
+
+* Ajouter les directives tailwind au fichier _styles.scss_ du dossier _src_
+
+[source,scss]
+----
+/* src/styles.scss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+----
+
+* Modifier le fichier _titre.component.html_
+
+[source,html]
+----
+<h1>Super NG</h1>
+----
+
+* Modifier le fichier _titre.compoennt.scss_ pour y ajouter des directives tailwind
+
+[source,scss]
+----
+h1 {
+  @apply text-white text-4xl flex justify-center p-4 bg-gradient-to-b from-blue-800 to-blue-100;
+}
+----
+
+* Constater la bonne prise en compte de la modification des deux derniers fichiers.
+
+image::module05/super_composant/maquette.png[]

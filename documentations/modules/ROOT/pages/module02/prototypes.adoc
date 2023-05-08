@@ -1,0 +1,40 @@
+= Prototypes
+
+== Objectifs
+
+L'objectif de cette démonstration est la création et l'utilisation d'objets Javascript en utilisant les prototypes.
+
+== Mise en place
+
+TIP: La mise en place effectuée dans la première démonstration peut être utilisé
+
+* Créer un fichier index.html dans un dossier _demonstrations/module02_
+* Créer un fichier script.js dans le même dossier
+* Faire le lien entre le fichier html et le fichier javascript
+
+[source,html]
+----
+include::example$/module02/index.html[]
+----
+
+== Création d'un objet
+
+=== Ajout du prototype a une function
+
+On "exporte" les méthodes à l'intérieur d'un prototype.
+
+Soit en conservant la function de création d'objet avec ses attributs et en y ajoutant le prototype :
+
+[source,javascript]
+----
+include::example$/module02/script.js[tags=prototype1,indent=0]
+----
+
+=== Ajout de propriété à un prototype
+
+Ou bien en créant d'abord le prototype puis en y ajoutant des propriétés, au compte goute.
+
+[source,javascript]
+----
+include::example$/module02/script.js[tags=prototype2,indent=0]
+----

@@ -1,0 +1,45 @@
+= Installation de TypeScript
+:experimental:
+
+== Objectif
+
+L'objectif de cette démonstration est l'installation de Typescript.
+
+== Installation
+
+C'est NPM qui va se charger de l'installation de Typescript.
+
+La commande :
+
+[source,console]
+----
+npm install -g typescript
+----
+
+va se charger du téléchargement et de l'installation.
+
+== Webstorm
+
+On va modifier la configuration de WebStorm pour qu'il transpile le code typescript en javascript à la volée.
+
+* menu:File|Settings
+
+image::module04/installation_typescript/recompile_on_changes.png[]
+
+* Cochez la case _Recompile on changes_ puis _OK_
+
+== Vérification
+
+* Ecrire le code suivant dans un fichier _transpilerEtExecuter.ts_ :
+
+[source,typescript]
+----
+function bonjour(prenom: string) {
+    console.log(`Bonjour ${prenom}`);
+}
+
+bonjour('Chloé');
+----
+
+* Constater le fichier _transpilerEtExecuter.js_ généré.
+* Executer le fichier javascript.

@@ -1,0 +1,88 @@
+= Enigma
+
+L'objectif de ce TP est la réalisation de la machine enigma.
+
+== Description
+
+Pendant la Seconde Guerre mondiale, les Allemands utilisaient une machine appelée Enigma pour chiffrer toutes leurs communications radio.
+Elle est restée inviolée durant de nombreuses années.
+
+C'est Alan Turing qui a réussi à en venir à bout. Les historiens estiment qu'il a écourté la seconde guerre mondiale de deux années et a, très certainement, empêché la mort de plusieurs millions de personnes.
+
+== Fonctionnement de la machine
+
+[.text-center]
+image::tps/module02/enigma.jpg[]
+
+TIP: le fonctionnement de la machine a volontairement été simplifié. On ne va utiliser que 2 rotors au lieu de 3.
+Et aucune substitution en facade.
+
+Le chiffrement d'un message sera réalisé en trois étapes :
+
+=== César
+
+* Un chiffrement de césar
+
+Sur chaque lettre est appliqué un nombre.
+
+Par exemple, si le chiffre du jour est 1 alors la lettre A devient B.
+Si le chiffre du jour était 2 ainsi la lettre A devient C.
+
+=== Rotor numéro 1
+
+* Le passage dans un premier rotor
+
+Un rotor est une chaine de caractère contenant l'ensemble des lettres de l'alphabet dans un ordre définit à l'avance.
+
+Par exemple imaginons que le rotor soit "BDFHJLCPRTXVZNYEIWGAKMUSQO".
+Si la lettre A passe par ce rotor alors elle devient B. Puisque A est la première lettre de l'alphabet et B la première lettre du rotor.
+Si la lettre Z passe par ce rotor alors elle devient O. Puisque Z est la dernière lettre de l'alphabet et O la dernière du rotor.
+
+=== Rotor numéro 2
+
+* Le passage dans un deuxième rotor.
+
+Le principe est exactement le même que le premier rotor.
+
+== Exemple
+
+Le message a chiffré est "ENI".
+La configuration du jour est : 2 - SWYUJDXEIOFPMHLCZTVRBNQAGK - MUCBATFEYQXOZVGWISHKJNRDLP
+
+=== César
+
+"ENI" devient "GPK". Chaque lettre est substituée par la lettre située deux crans après elle.
+
+=== Rotor 1
+
+Le "G" devient "X", le "P" devient "C" et le "K" devient "F".
+
+"GPK" devient "XCF".
+
+=== Rotor 2
+
+Le "X" devient "D", le "C" devient "C" et le "F" devient "T".
+
+"XCF" devient "DCT".
+
+=== Résultat
+
+En entrant "ENI" dans la machine enigma, elle en ressort "DCT" en utilisant la configuration du jour.
+
+== Réalisation
+
+En utilisant la programmation orienté objet en Javascript, vous mettrez en place un champ de saisie permettant de rentrer du texte.
+
+La machine enigma fera le rendu de la phrase chiffré, instantanément, dans une div, située sous le champ de saisie, en appliquant la configuration du jour.
+
+Vous mettrez en place la possibilité de changer le chiffre, les rotors ou les trois, avant la rédaction du message.
+
+=== Classes
+
+==== Configuration
+
+La classe *Configuration* contient un attribut cesar et deux attributs rotors.
+
+==== Message
+
+La classe *Message* possède une date, une configuration et du texte.

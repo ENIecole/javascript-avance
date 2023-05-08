@@ -1,0 +1,26 @@
+= Javascript orienté objet
+
+== Objectifs
+
+L'objectif de cette démonstration est la création et l'utilisation d'objets Javascript simple.
+
+== Mise en place
+
+* Créer un fichier index.html dans un dossier _demonstrations/module02_
+* Créer un fichier script.js dans le même dossier
+* Faire le lien entre le fichier html et le fichier javascript
+
+[source,html]
+----
+include::example$module02/index.html[]
+----
+
+== Création d'un objet
+
+[source,javascript]
+----
+include::example$module02/script.js[tags=joo1,indent=0]
+----
+
+[.text-center]
+image::module02/console_table_joo.png[]

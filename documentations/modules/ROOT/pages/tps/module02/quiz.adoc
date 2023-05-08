@@ -1,0 +1,73 @@
+= Quiz
+
+== Objectif
+
+L'objectif de ce TP est la réalisation d'un quiz interactif.
+
+== Description
+
+Vous êtes en charge du développement d'un jeu de quiz interactif.
+
+Vous allez créer deux classes en utilisant es6 et en respectant le diagramme de classe ci-après.
+
+Ces classes doivent permettre de représenter les questions, les réponses et le quizz et d'interagir avec le DOM pour afficher les questions, collecter les réponses des utilisateurs et afficher les résultats.
+
+== Réalisation
+
+=== Diagramme de classe
+
+image::tps/module02/diag_classe_light.mmd.svg[]
+
+=== Question
+
+Créez une classe *Question*.
+
+==== Propriétés
+
+La classe *Question* possède les propriétés suivantes :
+
+* _enonce_ : une chaine de caractère représentant l'énonce de la question
+* _reponses_: un tableau de chaines de caractères représentant les réponses possibles
+* _reponseCorrecte_ : un entier représentant l'indice de la réponse correcte dans le tableau _reponses_
+
+==== Méthodes
+
+Ajoutez une méthode _afficher()_ à la classe *Question* qui génère et renvoie un élément HTML représentant la question dans le DOM.
+
+TIP: le retour de cette fonction peut être une _div_ contenant la question et des boutons radio par exemple
+
+=== Quizz
+
+Créez une classe *Quiz*
+
+==== Propriétés
+
+La classe *Quiz* contient les propriétés suivantes :
+
+* _questions_ : un tableau de *Question*
+* _score_ : un entier pour stocker le score de l'utilisateur
+
+==== Méthodes
+
+Ajouter les méthodes suivantes :
+
+* _afficherQuestion(question)_ : Afficher une question dans le DOM en utilisant la méthode _afficher() de la classe Question
+* _collecterReponse()_ : Collecter la réponse de l'utilisateur, vérifier si elle est correcte et mettre à jour le score
+* _afficherResultat()_ : Afficher le score de l'utilisateur dans le DOM
+
+=== HTML
+
+Le fichier HTML sera réduit au strict minimum :
+
+[source,html]
+----
+include::example$tps/module02/index.html[indent=0]
+----
+
+=== CSS
+
+Vous êtes libre sur le choix esthétique de votre application
+
+== Solution
+
+Une solution est proposée pour ce TP sous la forme de fichiers HTML, CSS et Javascript disponibles dans les ressources à télécharger.

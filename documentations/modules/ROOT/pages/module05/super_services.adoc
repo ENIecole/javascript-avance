@@ -1,0 +1,125 @@
+= Angular - Super service
+
+== Objectif
+
+L'objectif de cette démonstration est l'utilisation d'un service pour récupérer le tableau de super héros.
+
+== Mise en place
+
+Cette démonstration démarre ou la précédente s'arrête.
+
+== Création du service
+
+* À l'intérieur du projet Angular, lancer la création d'un servuce avec la commande :
+
+[source,console]
+----
+ng generate service services/api
+----
+
+NOTE: Le nom du service peut paraître étrange pour l'instant, mais tout prendra sens avec la démonstration suivante
+
+* Déplacer le tableau de superhéros du composant _tous-les-super-heors.component.ts_ vers le service
+
+[source,typescript]
+----
+import {Injectable} from '@angular/core';
+import {Super} from "../modeles/Super";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+
+  public supers: Array<Super>;
+
+  constructor() {
+    this.supers = [];
+    this.supers.push(new Super(1, 'Wonder Woman', 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/720-wonder-woman.jpg'));
+    this.supers.push(new Super(2, 'Hulk', 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/332-hulk.jpg'));
+    this.supers.push(new Super(3, 'Harley Quinn', 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/309-harley-quinn.jpg'));
+  }
+
+  public recupererLesSuperHeros(): Array<Super> {
+    return this.supers;
+  }
+
+  public recupereUnSeulSuperHero(id: number): Super | undefined {
+    return this.supers.find(s => s.id == id);
+  }
+}
+----
+
+== Composant tous-les-super-heros
+
+* Simplifier le code du composant principal en utilisant un service plutôt qu'un tableau de super héros codé en dur dans le composant.
+
+[source,typescript]
+----
+import {Component, Inject} from '@angular/core';
+import {Super} from "../../modeles/Super";
+import {ApiService} from "../../services/api.service";
+
+@Component({
+  selector: 'app-tous-les-super-heros',
+  templateUrl: './tous-les-super-heros.component.html',
+  styleUrls: ['./tous-les-super-heros.component.scss']
+})
+export class TousLesSuperHerosComponent {
+
+  public supers: Array<Super>;
+
+  constructor(
+    @Inject(ApiService) private api: ApiService
+  ) {
+    this.supers = [];
+  }
+
+  public ajoutSupers() {
+    this.supers = this.api.recupererLesSuperHeros();
+  }
+}
+----
+
+== Composant un-seul-super-hero
+
+[source,typescript]
+----
+import {Component, Inject} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {ApiService} from "../../services/api.service";
+import {Super} from "../../modeles/Super";
+
+@Component({
+  selector: 'app-un-seul-super-hero',
+  templateUrl: './un-seul-super-hero.component.html',
+  styleUrls: ['./un-seul-super-hero.component.scss']
+})
+export class UnSeulSuperHeroComponent {
+
+  public id!: string | null;
+  public un_super: Super | undefined;
+
+  constructor(
+    @Inject(ActivatedRoute) private route: ActivatedRoute,
+    @Inject(ApiService) private api: ApiService
+  ) {
+    this.id = this.route.snapshot.paramMap.get('id');
+    if (this.id) {
+      this.un_super = this.api.recupereUnSeulSuperHero(+this.id);
+    }
+  }
+}
+----
+
+[source,html]
+----
+<div class="grid grid-cols-2 items-center justify-items-center p-4"
+     *ngIf="un_super">
+  <img class="rounded-lg" [src]="un_super.image">
+</div>
+----
+
+== Verification
+
+* Vérifier le bon fonctionnement de l'application malgré le changement sur le service effectué.

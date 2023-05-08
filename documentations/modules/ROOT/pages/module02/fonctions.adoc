@@ -1,0 +1,33 @@
+:icons: font
+:source-highlighter: highlight.js
+
+= Functions
+
+== Objectifs
+
+L'objectif de cette démonstration est la création et l'utilisation d'objets Javascript simple en se rapprochant de ce qui se fait en Java avec les classes.
+
+Ici, on ne parle pas encore de classe ES6 puisqu'elles seront vues dans une des démonstrations suivantes.
+
+== Mise en place
+
+TIP: La mise en place effectuée dans la première démonstration peut être utilsée
+
+* Créer un fichier index.html dans un dossier _demonstrations/module02_
+* Créer un fichier script.js dans le même dossier
+* Faire le lien entre le fichier html et le fichier javascript
+
+[source,html]
+----
+include::example$/module02/index.html[]
+----
+
+== Création d'un objet
+
+On commence à se rapprocher de ce qui se fait en Java.
+À la différence qu'un objet n'est pas encore une classe, mais une function.
+
+[source,javascript]
+----
+include::example$/module02/script.js[tags=joo2,indent=0]
+----

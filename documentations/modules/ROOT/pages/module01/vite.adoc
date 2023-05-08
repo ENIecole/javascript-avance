@@ -1,0 +1,45 @@
+= ViteJs
+
+== Objectifs
+
+L'objectif de cette démonstration est la mise en place d'un projet vitejs.
+
+== Réalisation
+
+* Ouvrir une nouvelle invite de commande windows
+* Se déplacer dans le répertoire des projets WebStorm
+
+[source,console]
+----
+cd WebStormProjects
+----
+
+* Créer un nouveau projet vitejs
+
+[source,console]
+----
+npm create vite
+----
+
+* Répondre aux questions :
+
+[source,console]
+----
+Project-name: projet-vite
+Select a framework: Vanilla
+Select a variant: JavaScript
+----
+
+* Ouvrir le projet dans Webstorm
+
+* Dans le terminal de Webstorm :
+
+[source,console]
+----
+npm install
+npm run dev
+----
+
+* Vérifier que le site est accessible sur localhost
+* Effectuer des modifications du fichier index.html et/ou main.js
+* Constater les changements

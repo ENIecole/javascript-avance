@@ -1,0 +1,114 @@
+= Javascript avancé - Initiation à Angular
+
+== Présentation
+
+[.text-center]
+[cols="^.^,^.^"]
+[frame=none]
+[grid=none]
+|===
+a| image::index/javascript.svg[] a| image::index/angular.svg[]
+|===
+
+Ce cours s'articule autour de 5 modules :
+
+* Les bases de Javascript
+* Javascript orienté objet
+* Javascript et les API
+* Typescript
+* Initiation à Angular
+
+== Déroulé
+
+[cols="^.^,^.^"]
+|===
+| Module 1 : les bases | 1/2 journée
+| Module 2 : Javascript orienté objet | 1 journée
+| Module 3 : Javascript et les API | 1 journée
+| Module 4 : Typescript | 1/2 journée
+| Module 5 : Initiation à Angular | 2 journées
+|===
+
+== Modules
+
+=== Les bases de Javascript
+
+Plusieurs semaines se sont déroulées depuis la dernière fois qu'ils ont fait du Javascript.
+
+On commence par un peu d'histoire et un rappel de l'importance de Javascript de nos jours.
+On parle très rapidement d'es6 sans rentrer dans les détails pour préparer le module 2.
+Les concepts restent simples et évidents. Normalement, c'est de l'acquis.
+
+En fin de module, on ajoute npm, webpack, gulp, ViteJS et les tests unitaires avec Jest pour que le module ne soit pas trop ennuyant.
+
+Le TP de fin de module est un jeu similaire au pendu. Un mot est tiré au sort et il faut le deviner.
+
+image::tps/module01/devinette_maquette.png[]
+
+La correction est à adapter en fonction du public. Avec des alternants, on va utiliser ViteJs alors qu'avec des formations continues, un simple fichier html,css et javascript restent suffisants.
+
+=== Javascript orienté objet
+
+On rentre dans le vif du sujet. L'objectif est de les emmener progressivement à utiliser ES6.
+
+Le but, ici, c'est de réussir, au fil des démos, à les faire glisser d'un objet Javascript banale et ridicule vers une classe ES6 en passant par de la factorisation et l'utilisation des prototypes.
+
+NOTE: Les prototypes peuvent être abordés très très très rapidement. Ce n'est pas le but du module. La priorité c'est ES6.
+
+Une liste non exhaustive des nouvelles fonctionnalités de ES6 à nos jours est prévue. À adapter en fonction du temps passé sur ce module. Toutes les démonstrations ne sont pas forcément à faire.
+
+En fin de module, une démonstration permet de mettre en lumière Babel.
+
+* Avec les alternants, c'est la continuité de Webpack vu pendant le module 01.
+* Pour les formations continues, c'est une découverte en ligne de commande.
+
+Le TP est une utilisation basique des classes ES6 pour réaliser un jeu de Quizz intéractif.
+
+// TODO Faire le TP enigma de difficulté beaucoup plus élévé pour les alternants
+
+=== Javascript et les API
+
+Ce module est une pure découverte pour les étudiants. Ils n'ont jamais entendu parler d'API.
+
+La partie théorique est extrêmement importante. L'utilisation des différents outils permettant d'interroger une API également.
+
+Le site de ApiPlatform est utilisé pour illustrer une API Swagger. En espérant qu'ils aient le temps de faire un peu d'APIplatform dans le module Symfony qui intervient juste après.
+Ici, on leur expose une API qu'ils vont utiliser alors qu'ils vont la créer plus tard dans la formation.
+
+Ne pas hésiter à s' attarder longuement sur les promesses et les await/async. Ce sera du temps gagné sur l'initiation Angular.
+
+Le TP est intéressant et très agréable à réaliser. Nous allons suivre le trajet de l'ISS, en temps réèl, sur une carte LeafLet.
+
+image::tps/module03/iss_etape3.png[]
+
+=== Typescript
+
+Le module 04 est strictement identique à ce qu'il était dans la précédente version du cours.
+
+Aucun changement. Pas même sur le TP qui est la réalisation de classes, en suivant scrupuleusement un diagramme de classes, avec ses héritages, ses interfaces, et ses attributs optionnels
+
+=== Initiation à Angular
+
+Le module 05 permettra aux étudiants d'appréhender les concepts de composants, de routage, de services et d'API.
+
+En somme, on reprend les concepts des précédents modules en utilisant un framework.
+
+Les formulaires ont volontairement été mis de côté. Il fallait en laisser un peu pour le module Angular qui interviendra plus tard dans la formation.
+
+Les démonstrations sont une application fil rouge de super héros.
+
+image::module05/super_api/tous-les-super-heros.png[]
+
+image::module05/super_api/un-seul-super-hero.png[]
+
+Le TP ressemble trait pour trait aux démonstrations à ceci près qu'il s'agit de Pokémon et non de super héros.
+
+L'objectif ici est de les guider au maximum. C'est une initiation. On leur montre quelque chose, ils refont exactement la même chose quelques minutes plus tard.
+
+Aucune frustration. Ils font leur donner envie d'en connaître plus. A priori, ils sont ravis de poursuivre avec Angular dans le module suivant.
+
+== Mise à jour des cours
+
+L'ensemble du cours (powerpoint, demonstrations et tps) est sur github à l'adresse : http://github.com/caliendojulien/eni-javascript-s2[]
+
+NOTE: Les mises à jour s'effectuent par *pull request*. Les erreurs sont signalées dans les *issues*.

@@ -1,0 +1,58 @@
+= Devinette
+
+L'objectif de ce TP est la réalisation d'un jeu de devinette.
+
+== Description
+
+Cet exercice implémente la logique du jeu de devinette en JavaScript.
+Vous utiliserez les éléments du DOM pour afficher la phrase à deviner et les boutons de choix des lettres.
+
+Vous mettrez à jour l'affichage en fonction des tentatives et des lettres correctement devinées.
+
+Lorsque la phrase est entièrement devinée ou que les tentatives sont épuisées, un message est affiché et la phrase complète est révélée.
+
+== Réalisation
+
+=== Maquette
+
+Vous tenterez de respecter la maquette suivante :
+
+[.text-center]
+image::tps/module01/devinette_maquette.png[]
+
+=== HTML
+
+La partie HTML doit être le plus simple possible.
+
+Vous effectuerez la majorité des traitements en Javascript.
+
+NOTE: Les lettres sont "fabriquées" en Javascript dans une boucle _for_.
+
+=== Javascript
+
+Vous êtes libre d'écrire toutes les fonctions qui vous sembleront utiles.
+
+Selon moi, les 7 méthodes suivantes me paraissent nécessaires sans être la seule solution possible :
+
+[source,javascript]
+----
+function reset() {} // Réinitialiser le jeu
+function creer_lettres_alphabet() {} // Créer le tableau de lettres de l'alphabet
+function creer_mot_a_rechercher() {} // Creation du mot à rechercher en remplacant ses lettres par des "_"
+function rechercher_une_lettre() {} // Recherche de la lettre cliqué dans le mot à rechercher
+function reveler_une_lettre() {} // Si la lettre est présente dans le mot recherché elle est affichée
+function verif_victoire() {} // Vérifier si le jeu est gagné
+function reveler_mot() {} // Afficher le mot rechercher
+----
+
+IMPORTANT: Ce sont vos choix de conception qui décident quelles méthodes sont nécessaires. Pas moi.
+
+=== CSS
+
+Vous êtes libre de modifier l'interface graphique si vous jugez le design "particulier" de Minecraft horrible.
+
+Si vous souhaitez coller parfaitement à la maquette alors vous aurez sûrement besoin https://fontlibrary.org/face/minecraftia[de la police d'écriture minecraftia].
+
+== Solution
+
+Une solution est proposée pour ce TP sous la forme de fichiers HTML, CSS et Javascript disponibles dans les ressources à télécharger.

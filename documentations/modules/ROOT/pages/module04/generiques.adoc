@@ -1,0 +1,33 @@
+= Les génériques
+
+== Objectif
+
+L'objectif de cette démonstration est la déclaration et l'utilisation de génériques en Typescript.
+
+== Tableaux
+
+[source, typescript]
+----
+include::example$module04/generiques/generiques.ts[indent=0,tags=tableaux]
+----
+
+== Classes
+
+=== Déclaration
+
+[source, typescript]
+----
+include::example$module04/generiques/generiques.ts[indent=0,tags=classe_generique]
+----
+
+=== Utilisation
+
+[source, typescript]
+----
+include::example$module04/generiques/generiques.ts[indent=0,tags=utilisation]
+----
+
+== Résultat
+
+* Visualiser le ou les fichiers javascript générés par l'IDE.
+* Exécuter le fichier javascript pour observer le comportement

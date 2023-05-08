@@ -1,0 +1,31 @@
+= Swagger
+
+== Objectifs
+
+L'objectif de cette démonstration est de montrer un exemple d'api REST documenté avec Swagger
+
+On va s'appuyer sur l'application de démonstration de Api platform.
+
+== Api platform
+
+* Se rendre sur l'url https://demo.api-platform.com/docs[]
+
+== Try it out
+
+* Expliquer chaque verbe HTTP
+* Expliquer la notion de collection et de ressources
+* Cliquer sur le verbe HTTP *GET* de la ressource *Book*
+* Cliquer sur *try it out* à droite
+
+image::module03/swagger_book.png[]
+
+* Tester les différentes sélections possibles en observant à chaque fois le résultat dans la fenêtre *Responses*
+
+image::module03/swagger_resultats.png[]
+
+== Schemas
+
+* Se rendre dans la partie *Schemas* tout en bas de la page
+* Observer le schéma Book et faire le parralèle avec les classes (ou interfaces) Javascript
+
+image::module03/swagger_schemas.png[]

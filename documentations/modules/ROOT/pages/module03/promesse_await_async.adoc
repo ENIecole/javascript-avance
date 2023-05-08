@@ -1,0 +1,101 @@
+= Promesse, await et async
+
+== Objectifs
+
+L'objectif de cette démonstration est l'utilisation des promesses et des mots clés async et await.
+
+IMPORTANT: Lancer le script javascript en mode debug pour avoir le bon affichage des émojis dans la console.
+
+== Chainage
+
+Un des grands intérêts des promesses est le fait de pouvoir la chainer.
+
+[source,javascript]
+--
+include::example$module03/script.js[tags=pikachu,indent=0]
+--
+
+Ici,
+
+* fetch() retourne une promesse à la ligne 1
+* r.json() retourne une promesse à la ligne 2
+
+Et les deux sont "chaînées".
+
+== Erreurs
+
+N'importe quelle erreur dans la chaine de promesse peut être récupérée grâce à catch()
+
+[source,javascript]
+----
+fetch('')
+.catch (erreur => console.log(erreur));
+----
+
+Intercepter une erreur entraîne l'arrêt immédiat de toute la chaîne de promesses.
+
+== Créer une méthode asynchrone
+
+Si on imagine une fonction qui incrémente un indice jusqu'à un très grand nombre, celle-ci prendra du temps à s'exécuter.
+
+De plus, elle bloque le déroulé du programme puisque l'instruction suivante attend que la précédente soit terminée.
+
+[source,javascript]
+--
+include::example$module03/asynchrone.js[tags=synchrone,indent=0]
+--
+
+Lorsque les instructions situées après la méthode n'ont pas besoin qu'elle soit terminée, c'est une bonne occasion de la rendre asynchrone grâce aux promesses.
+
+[source,javascript]
+--
+include::example$module03/asynchrone.js[tags=promesse,indent=0]
+--
+
+Les promesses peuvent être difficiles à suivre et à lire.
+Async et Await sont du sucre syntaxique permettant de clarifier l'utilisation des promesses.
+
+== Async / await
+
+=== Async
+
+async permet de simplifier l'écriture d'une méthode asynchrone passant de ça :
+
+[source,javascript]
+--
+include::example$module03/asynchrone.js[tags=resolve,indent=0]
+--
+
+a ca :
+
+[source,javascript]
+--
+include::example$module03/asynchrone.js[tags=async,indent=0]
+--
+
+Les deux méthodes retournent exactement le même résultat.
+
+=== Await
+
+A l'inverse, await permet d'attendre le retour d'un appel asynchrone avant de passer a l'instruction suivante.
+
+[source,javascript]
+--
+include::example$module03/asynchrone.js[tags=zoo1,indent=0]
+--
+
+Ici, une énorme erreur est commise.
+Mais c'est pédagogique.
+C'est le cas typique d'un await mal utilisé.
+
+Le deuxième appel asynchrone n'est effectué qu'après le premier.
+Pourtant, il aurait été préférable de lancer les deux appels en même temps et d'attendre le retour des deux dans le _return_.
+
+Comme ici :
+
+[source,javascript]
+--
+include::example$module03/asynchrone.js[tags=zoo2,indent=0]
+--
+
+TIP: Rappeler que l'important, quand on travaille en asynchrone, c'est de ne pas bloquer l'exécution du programme si ce n'est pas nécessaire.

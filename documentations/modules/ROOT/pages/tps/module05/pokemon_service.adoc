@@ -1,0 +1,17 @@
+= Pokemon - Service
+
+== Objectif
+
+L'objectif de ce TP est la mise en place d'un service en lieu et place du tableau de Pokemon présent dans le composant _pokemon.component.ts_.
+
+== Réalisation
+
+Créez un service responsable de l’affichage des Pokémon.
+
+Le composant pokemons ne devrait contenir aucun tableau JavaScript. S’il souhaite utiliser la liste des Pokémon, alors il doit faire appel au service dédié. Déplacez donc le tableau pokemons du fichier pokemons.component.ts dans le fichier TypeScript du service créé précédemment.
+
+Implémentez une méthode supplémentaire qui compte le nombre de Pokémon actuellement présents dans l’application (six pour l’instant).
+
+L’apparence de l’application doit être strictement identique à la capture d’écran ci-dessous.
+
+image::tps/module05/pokemons_service.png[]

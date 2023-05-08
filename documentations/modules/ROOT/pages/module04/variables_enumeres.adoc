@@ -1,0 +1,42 @@
+= Variables et énumérés
+
+== Objectif
+
+L'objectif de cette démonstration est la déclaration et l'utilisation du typage fort de Typescript.
+
+== Typage fort
+
+* Démarrer WebStorm
+* Écrire du code Typescript fortement typé
+
+[source,typescript]
+----
+// Déclarations de variables en TypeScript
+let unBooleen : boolean = true;
+let age : number = 25;
+let profession : string ="Informaticien";
+// La syntaxe Javascript est possible
+let uneVariable = 10;
+// Préférez la syntaxe suivante :
+let uneAutreVariable : any = 10;
+uneAutreVariable="dix";
+----
+
+== Enumérés
+
+[source,typescript]
+----
+enum Etablissement{
+    Maternelle,
+    Primaire,
+    College,
+    Lycee,
+    Superieur
+};
+let eni: Etablissement = Etablissement.Superieur;
+----
+
+== Javascript généré
+
+* Visualiser le fichier Javascript généré
+* Exécuter ce fichier pour observer le comportement

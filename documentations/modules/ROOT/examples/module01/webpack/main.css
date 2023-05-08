@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+    @apply m-2 w-full h-12 px-4 py-1 rounded-r-md border-gray-800 bg-gray-300 text-black focus:outline-none;
+}
+
+#formulaire {
+    @apply basis-2/3 flex justify-center;
+}
+
+#titre {
+    @apply text-4xl text-center m-4 p-4;
+}
+
+#carte {
+    @apply text-center basis-1/4 block rounded-xl border border-gray-800 bg-gray-900 p-4 shadow-xl sm:p-6 lg:p-8;
+}
+
+#carte_metier, #carte_description {
+    @apply mt-4 text-sm text-gray-300;
+}
+
+#carte_nom {
+    @apply mt-3 text-lg font-bold text-white sm:text-xl;
+}

@@ -1,0 +1,97 @@
+= Babel
+
+== Objectifs
+
+L'objectif de cette démonstration est l'utilisation de babel pour "transformer" un code es6+ pour qu'il soit utilisable par de vieux navigateurs qui ne supporte pas cette version de ECMAscript
+
+== Mise en place
+
+TIP: La mise en place effectuée dans la démonstration sur les classes ES6 peut être utilisé.
+
+* Créer un fichier index.html dans un dossier _demonstrations/module02_
+* Créer un fichier script.js dans un dossier _javascript_
+* Faire le lien entre le fichier html et le fichier javascript
+
+[source,html]
+----
+include::example$module02/index.html[]
+----
+
+== ES6
+
+TIP: le fichier javascript de la démonstration sur les classes ES6 peut être utilisé.
+
+* Ecrire du code javascript ES6+. Par exemple, en utilisant les classes :
+
+[source,javascript]
+----
+include::example$module02/script.js[tags=es6,indent=0]
+----
+
+== NPM
+
+* Créer un projet géré par NPM avec la commande :
+
+[source,console]
+----
+npm init -y
+----
+
+* Installer les paquets ad hoc :
+
+[source,console]
+----
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+----
+
+== Babel
+
+core est le paquet principal de babel, cli est l'interface en ligne de commande et un preset est en ensemble de règles de "transformation" que l'on va pouvoir surcharger.
+
+* Utiliser l'interface en ligne de commande pour tenter de convertir du code es6+
+
+[source,console]
+----
+.\/node_modules/.bin/babel script.js --out-dir lib
+----
+
+* Faire le constat qu'un fichier javascript a bien été créé dans le dossier lib mais qu'il est strictement identique au fichier original.
+
+En effet, aucune règle n'a été définie donc il n'a rien transformé.
+On peut lui demander de ne s'occuper que des classes, ou bien que des méthodes fléchées mais la plupart du temps on va utiliser des presets ou des fichiers de configuration pour se faciliter le travail.
+
+=== Presets
+
+[source,console]
+----
+.\/node_modules/.bin/babel script.js --out-dir lib --presets=@babel/env
+----
+
+* Constater la différence entre les deux fichiers
+
+[source,javascript]
+----
+include::example$module02/lib/scripts.js[indent=0]
+----
+
+=== Configuration
+
+L'ensemble des subtilités du fichier de configuration de babel est disponible https://babeljs.io/docs/configuration[ici].
+
+Pour l'heure, on va simplement lui donner les versions cibles des navigateurs web pour lesquelles on souhaite faire fonctionner notre site web.
+
+* Créer un fichier _babel.config.json_ à la racine du projet
+
+* Indiquer les versions de navigateur que l'on souhaite supporter
+
+[source,json]
+----
+include::example$module02/babel.config.json[indent=0]
+----
+
+* Relancer la commande sans le preset :
+
+[source,console]
+----
+.\/node_modules/.bin/babel script.js --out-dir lib
+----

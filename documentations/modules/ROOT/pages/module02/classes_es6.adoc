@@ -1,0 +1,30 @@
+= Classes ES6
+
+== Objectifs
+
+L'objectif de cette démonstration est la création et l'utilisation d'objets Javascript en utilisant ES6.
+
+== Mise en place
+
+TIP: La mise en place effectuée dans la première démonstration peut être utilsée
+
+* Créer un fichier index.html dans un dossier _demonstrations/module02_
+* Créer un fichier script.js dans le même dossier
+* Faire le lien entre le fichier html et le fichier javascript
+
+[source,html]
+----
+include::example$module02/index.html[]
+----
+
+== Création d'un objet
+
+Enfin, on attaque les classes es6.
+Manière "moderne" d'écrire la même chose que ce qu'on écrivait avec les prototypes.
+
+[source,javascript]
+----
+include::example$module02/script.js[tags=es6,indent=0]
+----
+
+WARNING: Bien rappeler que tout ça n'est que sucre syntaxique. En sous marin, ce sont des fonctions et des prototypes qui sont utilisés.

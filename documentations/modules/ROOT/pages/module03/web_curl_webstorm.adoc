@@ -1,0 +1,50 @@
+= Navigateur, Curl et WebStorm
+
+== Objectifs
+
+L'objectif de cette démonstration est l'utilisation d'un navigateur web, curl, puis WebStorm pour effectuer une requête HTTP simple.
+
+== Une requête HTTP avec un navigateur web
+
+* Ouvrir un navigateur web (peu importe lequel mais Firefox fournit une interface plus ergonomique)
+
+* Se rendre à l'url https://pokeapi.co/api/v2/pokemon/pikachu[]
+
+* Constater la représentation d'un objet Javascript (en l'occurence, ici, pikachu)
+
+[.text-center]
+image::module03/json_pokemon.png[]
+
+WARNING: On ne rentre pas dans les détails, ce sera vu dans les prochaines demonstrations.
+Ici, on montre juste qu'on peut faire une requête GET avec un simple navigateur web
+
+== La même requête HTTP avec curl
+
+* Ouvrir une invite de commande Windows
+
+* Taper la commande :
+
+[source,console]
+----
+curl -X GET "https://pokeapi.co/api/v2/pokemon/pikachu"
+----
+
+* Constater la même représentation de Pikachu
+
+TIP: Pour plus de lisibilité, on peut exporter le résultat de la commande curl vers un fichier text : curl -X GET "https://pokeapi.co/api/v2/pokemon/pikachu" > D:\pikachu.txt
+
+[.text-center]
+image::module03/curl_pikachu.png[]
+
+== La même requête HTTP avec Webstorm
+
+* À l'intérieur d'un projet WebStorm, créer un nouveau fichier : New=> File => HTTPRequest
+* Le nommer comme vous voulez. Par exemple : _api_
+* Écrire la même requête GET directement dans WebStorm et cliquez sur le bouton vert pour lancer la requête
+
+[.text-center]
+image::module03/webstorm_pikachu.png[]
+
+* Constater le résultat dans le panneau inférieur. La réponse est sauvegardée au format json pour plus de lisibilité.
+
+TIP: Plusieurs exemples de requêtes sont disponibles en haut à droite de la fenêtre d'édition.

@@ -1,0 +1,61 @@
+= Données, structure de code et fonctions
+:experimental:
+
+== Objectifs
+
+Très rapide.
+C'est un simple rappel sur les types de données, les structures de code et les fonctions.
+
+Aucune notion de DOM pour l'instant. On exécute un fichier javascript dans le terminal intégré à WebStorm.
+
+Le thème de Star Wars est utilisé pour essayer d'attirer l'attention sur une démonstration qui peut sembler inutile pour les apprenants.
+
+== Mise en place
+
+* Ouvrir Webstorm
+* Créer un nouveau document javascript : menu:New[JavaScript File]
+
+== Type de données
+
+On va faire la démonstration de ce qui a été dit pendant le powerpoint, avec des données extrêmment simple.
+
+* Deux chaines de caractères
+* Un objet
+* Un tableau
+
+[source,javascript]
+----
+include::example$module01/donnees_structure_code_fonctions/m01d01.js[tags=type_de_donnees,indent=0]
+----
+
+On en profite pour introduire _console.dir()_ et _console.table()_ pour que la démonstration ne soit pas ennuyante.
+
+TIP: Expliquer _typeof_ qui prendra tout son sens dans le module 02 lorsque l'on fera de l'objet.
+
+== Structure de code
+
+* Une boucle for...of va permettre de faire une boucle sur le tableau de planètes.
+* Une condition permet de faire passer Anakin du côté obscur de la force.
+
+Plus précisément, si la date du jour est paire, rien ne bouge. Sinon, il change de nom.
+
+[source,javascript]
+----
+include::example$module01/donnees_structure_code_fonctions/m01d01.js[tags=structure_de_code,indent=0]
+----
+
+== Fonctions
+
+Ici, on va utiliser une fonction pour aller récupérer dans un tableau un élément bien précis passé en paramètre.
+
+[source,javascript]
+----
+include::example$module01/donnees_structure_code_fonctions/m01d01.js[tags=fonction,indent=0]
+----
+
+Insister sur les bonnes pratiques de développement :
+
+* L'indentation
+* Les commentaires au-dessus de la fonction
+
+TIP: C'est le bon moment pour parler de la portée des variables.

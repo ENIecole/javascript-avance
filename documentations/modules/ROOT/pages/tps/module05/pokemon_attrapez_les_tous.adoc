@@ -1,0 +1,48 @@
+= Pokemon - Attrapez les tous
+
+== Objectif
+
+L'objectif de ce TP est l'utilisation de tous les concepts de liaisons, directives et routage.
+
+== Réalisation
+
+=== Le composant générations
+
+Créez  un  tableau  nommé  generations  dans  le  fichier  _generations.component.ts_.
+
+Il  doit contenir les sept générations de Pokémon, à savoir :
+
+* Génération I
+* Génération II
+* Génération III
+* Génération IV
+* Génération V
+* Génération VI
+* Génération VII
+
+Dans le gabarit _generations.component.html_, affichez la liste des générations.
+
+Utilisez une directive de structure pour afficher l’ensemble sous forme de liste.
+
+Pour rendre l’ensemble plus agréable à regarder, utilisez un framework CSS.
+
+image::tps/module05/generations.png[]
+
+=== Le composant pokemons
+
+Ajoutez un tableau contenant des Pokémon au composant pokemons.
+
+* 001 : Bulbizarre, une graine de type plante et poison, qui mesure 70 centimètres et pèse 6,9 kilogrammes.
+* 002 : Herbizarre, une graine de type plante et poison, qui mesure 1 mètre et pèse 13 kilogrammes.
+* 003 : Florizarre, une graine de type plante et poison, qui mesure 2 mètres et pèse 100 kilogrammes.
+* 004 : Salamèche, un lézard de type feu, qui mesure 60 centimètres et pèse 8,5 kilogrammes.
+* 005 : Reptincel, une flamme de type feu, qui mesure 1,1 mètre et pèse 19 kilogrammes.
+* 006 : Dracaufeu, une flamme de type feu et vol, qui mesure 1,7 mètre et pèse 90,5 kilogrammes.
+
+Avec l’aide d’un framework CSS, affichez une liste des Pokémon dans le gabarit du composant pokemons.
+
+Affichez les poids en kilogrammes et les tailles en mètres en respectant la convention française des nombres (séparateurs de milliers et virgule pour les nombres flottants).
+
+Si la taille ou le poids d’un Pokémon n’est pas renseigné, affichez "N/A".
+
+image::tps/module05/pokemons.png[]

@@ -1,0 +1,27 @@
+= Pokemon - API
+
+== Objectif
+
+L'objectif de ce TP est l'utilisation de l'api https://pokeapi.co[].
+
+== Réalisation
+
+=== Générations
+
+Modifiez le composant generations.component.ts pour qu’il fasse appel au service pokemons.service.ts.
+
+Celui-ci récupère, grâce à une méthode getGenerations(), la liste des générations Pokémon à partir de l’adresse https://pokeapi.co/api/v2/generation/[]
+
+image::tps/module05/16RI04.png[]
+
+=== Pokémons
+
+Sur le même principe, modifiez le composant pokemons.component.ts afin d’afficher des informations sur les Pokémon.
+
+Dans son utilisation la plus basique, une requête à l’adresse https://pokeapi.co/api/v2/pokemon/[] récupère la liste des 20 premiers Pokémon et https://pokeapi.co/api/v2/pokemon/1[], par exemple, retourne le Pokémon avec l’identifiant 1.
+
+En utilisant l’API et le service pokemons.service.ts, affichez sur la page pokemons.component.html les 20 premiers Pokémon. Modifiez la méthode getPokemons() du service pokemons.service.ts.
+
+image::tps/module05/16RI05.png[]
+
+NOTE: Pour aller plus loin, il est possible d’afficher, en français, le nom des Pokémon ainsi qu’un descriptif en allant puiser les informations nécessaires à l’URL https://pokeapi.co/api/v2/pokemon-species/[]

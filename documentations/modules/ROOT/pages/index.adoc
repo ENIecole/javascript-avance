@@ -31,11 +31,11 @@ Ce cours s'articule autour de 5 modules :
 
 == Powerpoints
 
-* http://54.36.181.210/javascript-avance/powerpoints/Module01.pptx[module 01]
-* http://54.36.181.210/javascript-avance/powerpoints/Module02.pptx[module 02]
-* http://54.36.181.210/javascript-avance/powerpoints/Module03.pptx[module 03]
-* http://54.36.181.210/javascript-avance/powerpoints/Module04.pptx[module 04]
-* http://54.36.181.210/javascript-avance/powerpoints/Module05.pptx[module 05]
+* link:http://54.36.181.210/javascript-avance/powerpoints/Module01.pptx[Module 01]
+* link:http://54.36.181.210/javascript-avance/powerpoints/Module02.pptx[Module 02]
+* link:http://54.36.181.210/javascript-avance/powerpoints/Module03.pptx[Module 03]
+* link:http://54.36.181.210/javascript-avance/powerpoints/Module04.pptx[Module 04]
+* link:http://54.36.181.210/javascript-avance/powerpoints/Module05.pptx[Module 05]
 
 == Modules
 

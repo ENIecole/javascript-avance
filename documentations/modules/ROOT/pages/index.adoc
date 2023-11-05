@@ -12,11 +12,12 @@ a| image::index/javascript.svg[] a| image::index/angular.svg[]
 
 Ce cours s'articule autour de 5 modules :
 
-* Les bases de Javascript
-* Javascript orienté objet
-* Javascript et les API
-* Typescript
-* Initiation à Angular
+* https://campuseni.sharepoint.com/:p:/r/sites/ServicePedagogique/Documents%20partages/01_Productions/02_Cursus/01_E%26D/02_D2WM/02_Modules/DEV2023_M120%20-%20JavaScript%20avanc%C3%A9/00_Sources/02_Pr%C3%A9sentielle/01_Diaporama/M01%20-%20Rappels%20%5Bformateur%5D.pptx?d=w81c3d77351e7450586b1cb67d51fe724&csf=1&web=1&e=poOxd2[Les bases de Javascript]
+* https://campuseni.sharepoint.com/:p:/r/sites/ServicePedagogique/Documents%20partages/01_Productions/02_Cursus/01_E%26D/02_D2WM/02_Modules/DEV2023_M120%20-%20JavaScript%20avanc%C3%A9/00_Sources/02_Pr%C3%A9sentielle/01_Diaporama/M02%20-%20Javascript%20orient%C3%A9%20objet%20%5Bformateur%5D.pptx?d=wc57b9c1a243e4e4e93f106a7fce1ff6a&csf=1&web=1&e=avm3UU[Javascript orienté objet]
+* https://campuseni.sharepoint.com/:p:/r/sites/ServicePedagogique/Documents%20partages/01_Productions/02_Cursus/01_E%26D/02_D2WM/02_Modules/DEV2023_M120%20-%20JavaScript%20avanc%C3%A9/00_Sources/02_Pr%C3%A9sentielle/01_Diaporama/M03%20-%20Javascript%20et%20les%20API%20%5Bformateur%5D.pptx?d=w8072b3e7a8c0426cb6adda0a37ba85fc&csf=1&web=1&e=EsCfNB[Javascript et les API]
+* https://campuseni.sharepoint.com/:p:/r/sites/ServicePedagogique/Documents%20partages/01_Productions/02_Cursus/01_E%26D/02_D2WM/02_Modules/DEV2023_M120%20-%20JavaScript%20avanc%C3%A9/00_Sources/02_Pr%C3%A9sentielle/01_Diaporama/M04%20-%20TypeScript%20%5Bformateur%5D.pptx?d=w8006f00fba914b60be5da91c254580e8&csf=1&web=1&e=rIROFi[Typescript]
+* https://campuseni.sharepoint.com/:p:/r/sites/ServicePedagogique/Documents%20partages/01_Productions/02_Cursus/01_E%26D/02_D2WM/02_Modules/DEV2023_M120%20-%20JavaScript%20avanc%C3%A9/00_Sources/02_Pr%C3%A9sentielle/01_Diaporama/M05%20-%20Initiation%20Angular%20%5Bformateur%5D.pptx?d=wc9db58cb1ef6499a81c4ecdfb532acb7&csf=1&web=1&e=oqefFA[Initiation à Angular]
+
 
 == Déroulé
 
